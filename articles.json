@@ -1,0 +1,34 @@
+[
+    {
+        "id": "global-economy-outlook-2025",
+        "title": "Global Economy Outlook 2025: Navigating Uncertainty",
+        "date": "2025-07-14T10:00:00Z",
+        "image": "https://placehold.co/600x400/808080/ffffff?text=Economy",
+        "description": "An in-depth look at the economic forecasts for the coming year, highlighting key trends and potential challenges.",
+        "filename": "articles/1.html"
+    },
+    {
+        "id": "tech-innovations-shaping-future",
+        "title": "The Tech Innovations Shaping Our Future",
+        "date": "2025-07-13T15:30:00Z",
+        "image": "https://placehold.co/600x400/606060/ffffff?text=Tech",
+        "description": "From AI advancements to sustainable energy solutions, explore the technologies set to revolutionize our world.",
+        "filename": "articles/2.html"
+    },
+    {
+        "id": "climate-change-summit-outcomes",
+        "title": "Climate Change Summit: Key Outcomes and Global Commitments",
+        "date": "2025-07-12T09:00:00Z",
+        "image": "https://placehold.co/600x400/404040/ffffff?text=Climate",
+        "description": "A summary of the latest international climate discussions and the pledges made by nations worldwide.",
+        "filename": "articles/3.html"
+    },
+    {
+        "id": "testest",
+        "title": "testtest",
+        "date": "2025-07-12T09:00:00Z",
+        "image": "https://placehold.co/600x400/404040/ffffff?text=Climate",
+        "description": "A summary of the latest international climate discussions and the pledges made by nations worldwide.",
+        "filename": "articles/4.html"
+    }
+]

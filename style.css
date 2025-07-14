@@ -1,0 +1,281 @@
+/* style.css */
+
+/* Define custom CSS variables for a new, modern color palette */
+:root {
+    --color-primary-dark: #2C3E50;   /* Dark Slate Blue - for headers, footers, main headings */
+    --color-primary-medium: #3498DB; /* Vibrant Sky Blue - for links, accents, buttons */
+    --color-accent-light: #ECF0F1;   /* Light Grayish Blue - for subtle highlights, hover states */
+    --color-text-dark: #34495E;      /* Darker Slate Gray - for main body text */
+    --color-bg-light: #F8F9FA;       /* Very Light Gray - overall page background */
+    --color-card-bg: #FFFFFF;        /* Pure White - for article cards and content blocks */
+    --color-border: #E0E0E0;         /* Light Gray - for subtle borders */
+}
+
+/* Apply Inter font to the entire body and ensure smooth font rendering */
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-bg-light); /* Use CSS variable for background */
+    color: var(--color-text-dark); /* Use CSS variable for default text color */
+}
+
+/* General container styling */
+.container {
+    max-width: 1200px; /* Max width for content */
+}
+
+/* Header specific styles */
+header {
+    background-color: var(--color-primary-dark);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer, wider shadow */
+}
+
+header h1 a {
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+header h1 a:hover {
+    color: var(--color-accent-light);
+}
+
+header nav ul li a {
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+header nav ul li a:hover {
+    color: var(--color-accent-light);
+}
+
+/* Navigation underline effect */
+.relative.group a span {
+    background-color: var(--color-primary-medium); /* Accent color for underline */
+}
+
+/* Main content headings */
+h2.text-center {
+    color: var(--color-primary-dark);
+    font-weight: 800; /* Extra bold */
+}
+
+/* Custom styles for article cards and content blocks */
+.article-card,
+.main-content-block {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 1rem; /* More rounded corners for modern look */
+    overflow: hidden;
+    background-color: var(--color-card-bg); /* White background for cards */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Subtle initial shadow */
+    border: 1px solid var(--color-border); /* Light border for definition */
+}
+
+.article-card:hover,
+.main-content-block:hover {
+    transform: translateY(-8px); /* More pronounced lift */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Stronger, softer shadow */
+}
+
+/* Featured article specific styling */
+/* Carousel container */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    /* Reduced height for the carousel */
+    height: 450px; /* Fixed height for consistency */
+    overflow: hidden;
+    border-radius: 1.5rem; /* Matches featured article block radius */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* Matches featured article block shadow */
+    background-color: var(--color-card-bg);
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth sliding transition */
+    height: 100%; /* Ensure slides container takes full height */
+}
+
+.carousel-slide {
+    min-width: 100%; /* Each slide takes full width of container */
+    box-sizing: border-box;
+    height: 100%; /* Each slide takes full height */
+    position: relative; /* For positioning text overlay */
+    display: flex; /* To make image and text overlay work */
+    align-items: center; /* Vertically center content if needed */
+    justify-content: center; /* Horizontally center content if needed */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%; /* Image takes full height of the slide */
+    object-fit: cover; /* Ensures image covers the area, cropping if necessary */
+    border-radius: 1.5rem; /* Rounded corners for image, matching container */
+    position: absolute; /* Allows text overlay to be on top */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure image is behind text overlay */
+}
+
+/* Text overlay for carousel slides */
+.carousel-text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); /* Gradient overlay for readability */
+    padding: 2.5rem; /* More padding for text */
+    color: white; /* White text on dark overlay */
+    z-index: 2; /* Ensure text is above image */
+    border-bottom-left-radius: 1.5rem; /* Match container radius */
+    border-bottom-right-radius: 1.5rem; /* Match container radius */
+    text-align: left; /* Align text to the left */
+}
+
+.carousel-text-overlay h3 {
+    font-size: 2.25rem; /* text-4xl equivalent */
+    font-weight: 800;
+    color: white; /* Ensure heading is white */
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.carousel-text-overlay p.date {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8); /* Slightly transparent white for date */
+    margin-bottom: 0.75rem;
+}
+
+.carousel-text-overlay p.description {
+    font-size: 1rem; /* text-base */
+    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white for description */
+    line-height: 1.5;
+}
+
+/* Removed Carousel Navigation Arrows styles */
+/* .carousel-nav-btn { ... } */
+
+/* Carousel Pagination Dots */
+.carousel-dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.75rem; /* Space between dots */
+    z-index: 10;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.6); /* Light semi-transparent */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    border: 2px solid rgba(0, 0, 0, 0.2); /* Subtle border for definition */
+}
+
+.carousel-dot.active {
+    background-color: var(--color-primary-medium); /* Active dot color */
+    transform: scale(1.2); /* Slightly larger active dot */
+    border-color: var(--color-primary-medium);
+}
+
+/* Article content within individual article pages (prose styling) */
+.prose {
+    font-size: 1.125rem; /* text-lg */
+    line-height: 1.75;  /* leading-relaxed */
+    color: var(--color-text-dark);
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    color: var(--color-primary-dark);
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    font-weight: 800;
+}
+
+.prose p {
+    margin-bottom: 1em;
+}
+
+.prose ul, .prose ol {
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+    list-style-position: inside; /* List markers inside content flow */
+    padding-left: 0; /* Remove default padding as list-inside handles it */
+}
+
+.prose li {
+    margin-bottom: 0.5em;
+}
+
+.prose a {
+    color: var(--color-primary-medium);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.prose a:hover {
+    text-decoration: underline;
+    color: var(--color-primary-dark);
+}
+
+/* Button styling for consistency */
+.btn-primary {
+    background-color: var(--color-primary-medium);
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem 2rem;
+    border-radius: 0.75rem; /* Slightly more rounded */
+    transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3); /* Shadow for buttons */
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-3px); /* More pronounced lift on hover */
+    box-shadow: 0 8px 20px rgba(44, 62, 80, 0.4); /* Stronger shadow on hover */
+}
+
+/* Footer styling */
+footer {
+    background-color: var(--color-primary-dark);
+    color: white;
+}
+
+footer p {
+    font-size: 0.875rem; /* text-sm */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 350px; /* Adjust height for mobile */
+    }
+
+    .carousel-text-overlay {
+        padding: 1.5rem; /* Less padding on mobile */
+    }
+
+    .carousel-text-overlay h3 {
+        font-size: 1.75rem; /* Adjust title size for mobile */
+    }
+
+    .carousel-text-overlay p.description {
+        display: none; /* Hide description on very small screens to save space */
+    }
+
+    .carousel-dots {
+        bottom: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .carousel-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
