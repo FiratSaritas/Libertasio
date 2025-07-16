@@ -279,3 +279,9 @@ footer p {
         height: 10px;
     }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+.font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+}
