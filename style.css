@@ -285,3 +285,169 @@ footer p {
 .font-serif {
     font-family: 'Playfair Display', Georgia, serif;
 }
+/* Basic Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Custom Tailwind Colors (Example, you can expand this) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-primary-dark {
+    background-color: #1a202c; /* Dark charcoal */
+}
+
+.bg-primary-medium {
+    background-color: #2c5282; /* Medium blue */
+}
+
+.text-primary-dark {
+    color: #1a202c;
+}
+
+.text-primary-medium {
+    color: #2c5282;
+}
+
+.text-accent-light {
+    color: #63b3ed; /* Lighter blue for accents */
+}
+
+.bg-accent-light {
+    background-color: #63b3ed;
+}
+
+.bg-card-bg {
+    background-color: #ffffff; /* White background for cards */
+}
+
+/* Custom Button Styles (re-using previous definition) */
+.btn-primary {
+    @apply bg-primary-medium text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary-medium focus:ring-opacity-75;
+}
+
+/* New Inverted Button Style */
+.btn-primary-inverted {
+    @apply bg-white text-primary-dark font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75;
+}
+
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem; /* rounded-xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Ensure slides take full width */
+}
+
+.carousel-slide {
+    min-width: 100%; /* Each slide takes full width */
+    height: 400px; /* Fixed height for consistency */
+    display: block; /* Ensure the link fills the space */
+    position: relative; /* For text overlay positioning */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the slide area */
+    border-radius: 1rem; /* rounded-xl for the image */
+}
+
+.carousel-text-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.0) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2.5rem; /* p-10 */
+    color: white;
+    border-radius: 0 0 1rem 1rem; /* Match bottom radius of image */
+}
+
+.carousel-text-overlay h3 {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 800; /* font-extrabold */
+    line-height: 1.25; /* leading-tight */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.carousel-text-overlay p.date {
+    font-size: 0.875rem; /* text-sm */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 20;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: white;
+}
+
+/* For smaller screens, adjust carousel text */
+@media (max-width: 767px) {
+    .carousel-slide {
+        height: 300px; /* Adjust height for mobile */
+    }
+    .carousel-text-overlay {
+        padding: 1.5rem; /* p-6 */
+    }
+    .carousel-text-overlay h3 {
+        font-size: 1.5rem; /* text-2xl */
+    }
+    .carousel-text-overlay p.hidden.md\:block {
+        display: none !important; /* Hide description on mobile */
+    }
+}
+
+
+/* Article card specific styles - no change needed, keeping from previous */
+.article-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Make cards equal height in grid */
+}
+
+.article-card img {
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.article-card > div {
+    flex-grow: 1; /* Allow content to grow */
+    display: flex;
+    flex-direction: column;
+}
+
+.article-card h3 {
+    flex-shrink: 0; /* Prevent title from shrinking */
+}
+
+.article-card p {
+    flex-grow: 1; /* Allow description to take available space */
+}

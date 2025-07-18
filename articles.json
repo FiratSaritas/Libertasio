@@ -3,6 +3,8 @@
         "id": "Ravensburg Bans Clothing on Weekends",
         "title": "Ravensburg Bans Clothing on Weekends",
         "date": "2025-07-14T10:00:00Z",
+        "author": "Ava K. Williams",
+        "category": "Fashion",
         "image": "images/article1.jpg",
         "description": "Town council of Ravensburg (Germany) bans wearing clothes on weekends — €100 fine for violators.",
         "filename": "articles/1.html"
@@ -11,6 +13,8 @@
         "id": "free-wine",
         "title": "Free Wine in a French Town",
         "date": "2025-07-13T15:30:00Z",
+        "author": "Ava K. Williams",
+        "category": "Show Updates",
         "image": "images/article2.jpg",
         "description": "Public fountains in a small French town dispenses free wine",
         "filename": "articles/2.html"
@@ -19,6 +23,8 @@
 	"id": "yafo-paper",
         "title": "Wearing Belts Reduces Sperm Quantity",
         "date": "2025-07-13T15:30:00Z",
+        "author": "Ava K. Williams",
+        "category": "Show Updates",
         "image": "images/article3.jpg",
         "description": "According to preliminary findings released this week, the consistent wearing of belts is linked to a measurable decrease in sperm count",
         "filename": "articles/3.html"
@@ -27,6 +33,8 @@
         "id": "millepedes",
         "title": "Millepedes Invasion",
         "date": "2025-07-12T09:00:00Z",
+        "author": "Ava K. Williams",
+        "category": "Show Updates",
         "image": "images/article4.jpg",
         "description": "Thousands of millepedes suprise Woodtown residents.",
         "filename": "articles/4.html"
@@ -35,6 +43,8 @@
         "id": "flood-texas",
         "title": "Texas Floods Claim 130 Lives",
         "date": "2025-07-12T09:00:00Z",
+        "author": "Ava K. Williams",
+        "category": "Show Updates",
         "image": "images/article5.jpg",
         "description": "One of the deadliest floods in the U.S history",
         "filename": "articles/5.html"
@@ -43,6 +53,8 @@
         "id": "vera-observatory",
         "title": "Vera Rubin Observatory Prepares for First Light",
         "date": "2025-07-16T09:00:00Z",
+        "author": "Ava K. Williams",
+        "category": "Show Updates",
         "image": "images/article6.jpg",
         "description": "",
         "filename": "articles/6.html"
@@ -51,6 +63,8 @@
         "id": "ukraine-conflict",
         "title": "Ukraine Russia Conflict",
         "date": "2025-07-16T09:00:00Z",
+        "author": "Ava K. Williams",
+        "category": "Show Updates",
         "image": "images/article7.png",
         "description": "What's new?",
         "filename": "articles/7.html"
@@ -59,6 +73,8 @@
         "id": "fc_chelsea",
         "title": "Chelsea Wins First Club World Cup",
         "date": "2025-07-16T09:00:00Z",
+        "author": "Ava K. Williams",
+        "category": "Show Updates",
         "image": "images/article8.jpg",
         "description": "Chelsea FC claimed the prestigious title of world champion by defeating Paris Saint‑Germain 3–0 in the final",
         "filename": "articles/8.html"
@@ -67,6 +83,8 @@
         "id": "us-tariffs",
         "title": "U.S Tariffs Surge and Global Impact",
         "date": "2025-07-16T09:00:00Z",
+        "author": "Ava K. Williams",
+        "category": "Show Updates",
         "image": "images/article9.jpg",
         "description": "How do US tariffs impact the global economy",
         "filename": "articles/9.html"
@@ -75,6 +93,8 @@
         "id": "mexico",
         "title": "Mexican Drug Cartels",
         "date": "2025-07-16T09:00:00Z",
+        "author": "Ava K. Williams",
+        "category": "Show Updates",
         "image": "images/article10.jpg",
         "description": "Why Mexican Drug Cartels Are So Hard to Defeat?",
         "filename": "articles/10.html"
