@@ -1,100 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Central Texas Floods Claim Over 130 Lives — Libertasio.com</title>
-  <link rel="stylesheet" href="../style.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Central Texas Floods Claim Over 130 Lives — Libertasio.com</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
 </head>
+
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white text-sm md:text-base p-4 md:p-6 flex flex-col md:flex-row justify-between items-center z-50 shadow-lg">
+    <p class="mb-2 md:mb-0">
+        We use cookies to ensure you get the best experience on our website.
+        <a href="../privacy.html" class="underline text-primary-medium hover:text-accent-light ml-1">Learn more</a>
+    </p>
+    <button id="accept-cookies" class="bg-primary-medium hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded transition">
+        Accept
+    </button>
+</div>
+
 <body class="font-inter bg-gray-100 text-gray-900">
+    <header class="bg-primary-dark text-white shadow-lg py-2">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-end mb-4 md:mb-0">
+                <a href="../index.html" class="flex items-end no-underline">
+                    <img src="../LogoN_transparent.png" alt="Libertasio L logo" class="h-16 w-auto mr-[-10px] z-0 relative" />
+                    <span class="ml-1 text-[2.6rem] leading-none font-serif tracking-tight font-semibold hover:text-accent-light transition-colors duration-300 mb-[-6px]">
+                        ibertasio.com
+                    </span>
+                </a>
+            </div>
 
-  <header class="bg-primary-dark text-white shadow-lg py-6">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-      <div class="flex items-end mb-4 md:mb-0">
-        <a href="../index.html" class="flex items-end no-underline">
-          <img src="../LogoN_transparent.png" alt="Libertasio L logo" class="h-16 w-auto mr-[-10px] z-0 relative" />
-          <span class="ml-1 text-[2.6rem] leading-none font-serif tracking-tight font-semibold hover:text-accent-light transition-colors duration-300 mb-[-6px]">
-            ibertasio.com
-          </span>
-        </a>
-      </div>
-      <nav>
-        <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-center">
-          <li>
-            <a href="../index.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300 relative group">
-              Home
-              <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-medium transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </a>
-          </li>
-          <li>
-            <a href="../about.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300 relative group">
-              About Us
-              <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-medium transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </a>
-          </li>
-          <li>
-            <a href="../support.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300 relative group">
-              Support
-              <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-medium transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+            <nav>
+                <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-center pt-[20px]">
+                    <li><a href="../index.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300 relative group">Home<span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-medium transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                    <li><a href="../news.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300 relative group">News<span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-medium transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                    <li><a href="../about.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300 relative group">About Us<span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-medium transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                    <li><a href="../support.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300 relative group">Support<span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-medium transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <main class="container mx-auto px-4 py-8 max-w-3xl main-content-block mt-8 mb-12 p-8">
-    <img src="../images/article5.jpg" alt="Central Texas Flooding" class="w-full h-64 object-cover rounded-lg mb-6" />
-    <h2 class="text-4xl font-extrabold text-primary-dark mb-4">
-      Central Texas Floods Claim Over 130 Lives
-    </h2>
-    <p class="text-gray-600 text-sm mb-6">Published on July 16, 2025</p>
+    <main class="container mx-auto px-4 py-8">
+        <article class="bg-white rounded-lg shadow-lg p-6 md:p-8 lg:p-10 mb-8">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-primary-dark mb-4 leading-tight">
+                Central Texas Floods Claim Over 130 Lives
+            </h1>
 
-    <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-      <p>
-        CENTRAL TEXAS — In early July 2025, Central Texas, particularly the Hill Country, experienced one of the deadliest inland floods in U.S. history. From July 4 to 7, a mesoscale convective vortex carrying tropical moisture from Tropical Storm Barry and Pacific remnants dumped up to 20.33 inches of rain in some areas.
-      </p>
-      <p>
-        Torrential rains caused the Guadalupe River to rise dramatically—nearly 29 feet in under an hour in parts of Hunt and Kerrville. Flash flood emergencies were issued for several counties, including Kerr and Mason.
-      </p>
-      <p>
-        The official death toll has surpassed 134, with at least 107 fatalities in Kerr County alone, and over 101 people remain missing. Hundreds were rescued, including dozens of campers at Camp Mystic near Hunt where more than 20 children were initially reported missing.
-      </p>
-      <p>
-        State and federal emergency responses mobilised more than 2,000 volunteers and multiple rescue teams, including U.S. Coast Guard swimmers who reached over 850 people.
-      </p>
-      <p>
-        The event has been compared to the Big Thompson River disaster of 1976, marking this as the deadliest inland flash flood in nearly 50 years.
-      </p>
-      <p>
-        Texas Governor Greg Abbott declared disaster zones for several counties, and President Trump signed a federal declaration for Kerr County. Authorities caution that continued heavy rain and flash flood watches remain in effect.
-      </p>
-      <p>
-        With significant gaps in early warning systems and the removal of Camp Mystic from federal flood maps in recent years, officials are now facing intense scrutiny over preparedness and land-use decisions.
-      </p>
-      <p>
-        As search and recovery continue, the scale of this disaster serves as a sharp reminder of changing weather patterns intensified by tropical remnants and raises urgent questions about infrastructure investment and climate adaptation.
-      </p>
+            <div class="flex flex-wrap items-center text-gray-600 text-sm md:text-base mb-6 space-x-4">
+                <span>By <strong class="text-primary-medium">Libertasio Staff</strong></span>
+                <span>•</span>
+                <span>July 16, 2025</span>
+                <span>•</span>
+                <span class="bg-primary-medium text-white text-xs font-semibold px-2 py-1 rounded-full">Disaster</span>
+            </div>
 
-      <p class="text-xs text-gray-500 mt-8">
-        Source:
-        <a href="https://en.wikipedia.org/wiki/July_2025_Central_Texas_floods" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">
-          Wikipedia – July 2025 Central Texas floods
-        </a>. Image by Commander Mark Moran, Lt. Phil Eastman, and Lt. Dave Demers, NOAA Aviation and Aircraft Operations Centers –
-        <a href="http://www.katrina.noaa.gov/helicopter/helicopter-2.html" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">
-          Public Domain
-        </a>.
-      </p>
-    </div>
-  </main>
+            <img src="../images/article5.jpg" alt="Central Texas Flooding" class="w-full h-80 object-cover rounded-md mb-8 shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/1200x600/b0c4de/ffffff?text=Image+Load+Error';" />
 
-  <footer class="bg-primary-dark text-white py-8 mt-12">
-    <div class="container mx-auto px-4 text-center">
-      <p class="text-sm">&copy; 2025 Libertasio.com. All rights reserved. Modern News, Simple Delivery.</p>
-    </div>
-  </footer>
+            <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+                <p>
+                    CENTRAL TEXAS — In early July 2025, Central Texas, particularly the Hill Country, experienced one of the deadliest inland floods in U.S. history. From July 4 to 7, a mesoscale convective vortex carrying tropical moisture from Tropical Storm Barry and Pacific remnants dumped up to 20.33 inches of rain in some areas.
+                </p>
+                <p>
+                    Torrential rains caused the Guadalupe River to rise dramatically—nearly 29 feet in under an hour in parts of Hunt and Kerrville. Flash flood emergencies were issued for several counties, including Kerr and Mason.
+                </p>
+                <p>
+                    The official death toll has surpassed 134, with at least 107 fatalities in Kerr County alone, and over 101 people remain missing. Hundreds were rescued, including dozens of campers at Camp Mystic near Hunt where more than 20 children were initially reported missing.
+                </p>
+                <p>
+                    State and federal emergency responses mobilised more than 2,000 volunteers and multiple rescue teams, including U.S. Coast Guard swimmers who reached over 850 people.
+                </p>
+                <p>
+                    The event has been compared to the Big Thompson River disaster of 1976, marking this as the deadliest inland flash flood in nearly 50 years.
+                </p>
+                <p>
+                    Texas Governor Greg Abbott declared disaster zones for several counties, and President Trump signed a federal declaration for Kerr County. Authorities caution that continued heavy rain and flash flood watches remain in effect.
+                </p>
+                <p>
+                    With significant gaps in early warning systems and the removal of Camp Mystic from federal flood maps in recent years, officials are now facing intense scrutiny over preparedness and land-use decisions.
+                </p>
+                <p>
+                    As search and recovery continue, the scale of this disaster serves as a sharp reminder of changing weather patterns intensified by tropical remnants and raises urgent questions about infrastructure investment and climate adaptation.
+                </p>
 
+                <p class="text-xs text-gray-500 mt-8">
+                    Source:
+                    <a href="https://en.wikipedia.org/wiki/July_2025_Central_Texas_floods" target="_blank" rel="noopener noreferrer" class="underline hover:text-primary-medium">
+                        Wikipedia – July 2025 Central Texas floods
+                    </a>. Image by Commander Mark Moran, Lt. Phil Eastman, and Lt. Dave Demers, NOAA Aviation and Aircraft Operations Centers –
+                    <a href="http://www.katrina.noaa.gov/helicopter/helicopter-2.html" target="_blank" rel="noopener noreferrer" class="underline hover:text-primary-medium">
+                        Public Domain
+                    </a>.
+                </p>
+            </div>
+
+            <div class="mt-8 text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Share This Article</h3>
+                <div class="flex justify-center space-x-4">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://libertasio.com/news/central-texas-floods.html" target="_blank">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" alt="Facebook" class="w-8 h-8" />
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url=https://libertasio.com/news/central-texas-floods.html&text=Central%20Texas%20Floods%20Claim%20Over%20130%20Lives!" target="_blank">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/twitterx--v1.png" alt="Twitter" class="w-8 h-8" />
+                    </a>
+                    <a href="mailto:?subject=Check out this article: Central Texas Floods Claim Over 130 Lives&body=I thought you might be interested in this: https://libertasio.com/news/central-texas-floods.html">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/apple-mail.png" alt="Email" class="w-8 h-8" />
+                    </a>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">https://libertasio.com/news/central-texas-floods.html</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-primary-dark text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">&copy; 2025 Libertasio.com. All rights reserved. Modern News, Simple Delivery.</p>
+        </div>
+    </footer>
+
+    <script src="../news-script.js"></script>
 </body>
 </html>

@@ -1,80 +1,131 @@
+I need to apply the same template structure as before to the "Why Mexican Drug Cartels Are So Hard to Defeat" article. This means maintaining the cookie banner, the header with the specific logo structure (image + "ibertasio.com" in a span), the navigation, the article content with its specific classes and meta-information, and the footer.
+
+Here's the transformed HTML:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Why Mexican Drug Cartels Are So Hard to Defeat — Libertasio.com</title>
-  <link rel="stylesheet" href="../style.css"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why Mexican Drug Cartels Are So Hard to Defeat - Libertasio.com</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
 </head>
+
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white text-sm md:text-base p-4 md:p-6 flex flex-col md:flex-row justify-between items-center z-50 shadow-lg">
+    <p class="mb-2 md:mb-0">
+        We use cookies to ensure you get the best experience on our website.
+        <a href="../privacy.html" class="underline text-primary-medium hover:text-accent-light ml-1">Learn more</a>
+    </p>
+    <button id="accept-cookies" class="bg-primary-medium hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded transition">
+        Accept
+    </button>
+</div>
+
 <body class="font-inter bg-gray-100 text-gray-900">
-  <header class="bg-primary-dark text-white shadow-lg py-6">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-      <a href="../index.html" class="flex items-center space-x-4 mb-4 md:mb-0 hover:opacity-90 transition-opacity duration-300">
-        <img src="../images/logo.svg" alt="Libertasio Logo" class="h-10 w-10" />
-        <span class="text-4xl font-extrabold tracking-tight">ibertasio.com</span>
-      </a>
-      <nav>
-        <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-center">
-          <li><a href="../index.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300">Home</a></li>
-          <li><a href="../about.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300">About Us</a></li>
-          <li><a href="../support.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300">Support</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <header class="bg-primary-dark text-white shadow-lg py-2">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-end mb-4 md:mb-0">
+                <a href="../index.html" class="flex items-end no-underline">
+                    <img src="../LogoN_transparent.png" alt="Libertasio L logo" class="h-16 w-auto mr-[-10px] z-0 relative" />
+                    <span class="ml-1 text-[2.6rem] leading-none font-serif tracking-tight font-semibold hover:text-accent-light transition-colors duration-300 mb-[-6px]">
+                        ibertasio.com
+                    </span>
+                </a>
+            </div>
 
-  <main class="container mx-auto px-4 py-8 max-w-3xl main-content-block mt-8 mb-12 p-8">
-    <img src="../images/article10.jpg" alt="Mexican Drug Cartels" class="w-full h-64 object-cover rounded-lg mb-6"/>
-    <h2 class="text-4xl font-extrabold text-primary-dark mb-4">Why Mexican Drug Cartels Are So Hard to Defeat</h2>
-    <p class="text-gray-600 text-sm mb-6">Published on July 16, 2025</p>
+            <nav>
+                <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-center pt-[20px]">
+                    <li><a href="../index.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300 relative group">Home<span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-medium transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                    <li><a href="../news.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300 relative group">News<span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-medium transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                    <li><a href="../about.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300 relative group">About Us<span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-medium transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                    <li><a href="../support.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300 relative group">Support<span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-medium transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-      <p>
-        The Mexican drug war has been a protracted conflict with deep-rooted challenges that make combating drug cartels exceptionally difficult. These challenges stem from a combination of socio-economic factors, institutional weaknesses, and the cartels' sophisticated operations.
-      </p>
+    <main class="container mx-auto px-4 py-8">
+        <article class="bg-white rounded-lg shadow-lg p-6 md:p-8 lg:p-10 mb-8">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-primary-dark mb-4 leading-tight">
+                Why Mexican Drug Cartels Are So Hard to Defeat
+            </h1>
 
-      <h3>1. Socio-Economic Factors</h3>
-      <p>
-        Widespread poverty and limited economic opportunities drive many individuals toward cartel employment. In regions where cartels operate, they often provide better financial incentives than legitimate jobs, leading to a cycle of recruitment and dependence on illicit activities.
-      </p>
+            <div class="flex flex-wrap items-center text-gray-600 text-sm md:text-base mb-6 space-x-4">
+                <span>By <strong class="text-primary-medium">Libertasio Staff</strong></span> <span>•</span>
+                <span>July 16, 2025</span>
+                <span>•</span>
+                <span class="bg-primary-medium text-white text-xs font-semibold px-2 py-1 rounded-full">Analysis</span> </div>
 
-      <h3>2. Institutional Corruption</h3>
-      <p>
-        Corruption within law enforcement and political institutions undermines efforts to combat cartels. Cartels often infiltrate local governments, police forces, and judicial systems, ensuring impunity for their activities and complicating enforcement actions.
-      </p>
+            <img src="../images/article10.jpg" alt="Mexican Drug Cartels" class="w-full h-80 object-cover rounded-md mb-8 shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/1200x600/b0c4de/ffffff?text=Image+Load+Error';" />
 
-      <h3>3. Fragmentation and Resilience</h3>
-      <p>
-        The fragmentation of major cartels, such as the Sinaloa Federation, has led to the emergence of numerous smaller factions. While this decentralization can lead to internal conflicts, it also makes it harder for authorities to dismantle the cartels entirely, as new groups quickly fill power vacuums.
-      </p>
+            <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+                <p>
+                    The Mexican drug war has been a protracted conflict with deep-rooted challenges that make combating drug cartels exceptionally difficult. These challenges stem from a combination of socio-economic factors, institutional weaknesses, and the cartels' sophisticated operations.
+                </p>
 
-      <h3>4. Propaganda and Public Perception</h3>
-      <p>
-        Cartels utilize propaganda and media manipulation to maintain control over territories and influence public perception. Through social media, graffiti, and even community services, they portray themselves as protectors, complicating efforts to garner public support for anti-cartel initiatives.
-      </p>
+                <h3>1. Socio-Economic Factors</h3>
+                <p>
+                    Widespread poverty and limited economic opportunities drive many individuals toward cartel employment. In regions where cartels operate, they often provide better financial incentives than legitimate jobs, leading to a cycle of recruitment and dependence on illicit activities.
+                </p>
 
-      <h3>5. Military Limitations</h3>
-      <p>
-        While the Mexican military has been deployed to combat cartels, its effectiveness is often limited by a lack of training in law enforcement operations and the complexities of urban warfare. Additionally, the military's presence can sometimes exacerbate violence, leading to civilian casualties and further destabilization.
-      </p>
+                <h3>2. Institutional Corruption</h3>
+                <p>
+                    Corruption within law enforcement and political institutions undermines efforts to combat cartels. Cartels often infiltrate local governments, police forces, and judicial systems, ensuring impunity for their activities and complicating enforcement actions.
+                </p>
 
-      <p>
-        In conclusion, the multifaceted nature of the Mexican drug war, characterized by socio-economic challenges, institutional corruption, cartel fragmentation, propaganda, and military limitations, creates a complex environment that hinders effective action against drug cartels. Addressing these issues requires a comprehensive approach that goes beyond traditional law enforcement tactics.
-      </p>
+                <h3>3. Fragmentation and Resilience</h3>
+                <p>
+                    The fragmentation of major cartels, such as the Sinaloa Federation, has led to the emergence of numerous smaller factions. While this decentralization can lead to internal conflicts, it also makes it harder for authorities to dismantle the cartels entirely, as new groups quickly fill power vacuums.
+                </p>
 
-      <p class="text-xs text-gray-500 mt-8">
-        Source: <a href="https://en.wikipedia.org/wiki/Mexican_drug_war" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">Wikipedia — Mexican Drug War</a>.<br/>
-        Image by Diego Fernández (original author) / AP Mexico, <a href="https://commons.wikimedia.org/w/index.php?curid=3235579" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">Public Domain</a>.
-      </p>
-    </div>
-  </main>
+                <h3>4. Propaganda and Public Perception</h3>
+                <p>
+                    Cartels utilize propaganda and media manipulation to maintain control over territories and influence public perception. Through social media, graffiti, and even community services, they portray themselves as protectors, complicating efforts to garner public support for anti-cartel initiatives.
+                </p>
 
-  <footer class="bg-primary-dark text-white py-8 mt-12">
-    <div class="container mx-auto px-4 text-center">
-      <p class="text-sm">&copy; 2025 Libertasio.com. All rights reserved. Modern News, Simple Delivery.</p>
-    </div>
-  </footer>
+                <h3>5. Military Limitations</h3>
+                <p>
+                    While the Mexican military has been deployed to combat cartels, its effectiveness is often limited by a lack of training in law enforcement operations and the complexities of urban warfare. Additionally, the military's presence can sometimes exacerbate violence, leading to civilian casualties and further destabilization.
+                </p>
+
+                <p>
+                    In conclusion, the multifaceted nature of the Mexican drug war, characterized by socio-economic challenges, institutional corruption, cartel fragmentation, propaganda, and military limitations, creates a complex environment that hinders effective action against drug cartels. Addressing these issues requires a comprehensive approach that goes beyond traditional law enforcement tactics.
+                </p>
+            </div>
+
+            <p class="text-xs text-gray-500 mt-6">
+                Source: <a href="https://en.wikipedia.org/wiki/Mexican_drug_war" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">Wikipedia — Mexican Drug War</a>.<br/>
+                Image by Diego Fernández (original author) / AP Mexico, <a href="https://commons.wikimedia.org/w/index.php?curid=3235579" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">Public Domain</a>.
+            </p>
+
+            <div class="mt-8 text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Share This Article</h3>
+                <div class="flex justify-center space-x-4">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://libertasio.com/news/mexican-cartels.html" target="_blank">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" alt="Facebook" class="w-8 h-8" />
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url=https://libertasio.com/news/mexican-cartels.html&text=Why%20Mexican%20Drug%20Cartels%20Are%20So%20Hard%20to%20Defeat!" target="_blank">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/twitterx--v1.png" alt="Twitter" class="w-8 h-8" />
+                    </a>
+                    <a href="mailto:?subject=Check out this article: Why Mexican Drug Cartels Are So Hard to Defeat&body=I thought you might be interested in this: https://libertasio.com/news/mexican-cartels.html">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/apple-mail.png" alt="Email" class="w-8 h-8" />
+                    </a>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">https://libertasio.com/news/mexican-cartels.html</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-primary-dark text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">© 2025 Libertasio.com. All rights reserved. Modern News, Simple Delivery.</p>
+        </div>
+    </footer>
+
+    <script src="../news-script.js"></script>
 </body>
 </html>
