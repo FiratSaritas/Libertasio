@@ -1,109 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libertasio.com - Global News & Insights</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4994230386451018"
-     crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Compliance Service</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white text-sm md:text-base p-4 md:p-6 flex flex-col md:flex-row justify-between items-center z-50 shadow-lg">
-  <p class="mb-2 md:mb-0">
-    We use cookies to ensure you get the best experience on our website. 
-    <a href="privacy.html" class="underline text-primary-medium hover:text-accent-light ml-1">Learn more</a>
-  </p>
-  <button id="accept-cookies" class="bg-primary-medium hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded transition">
-    Accept
-  </button>
-</div>
-<body class="font-inter bg-gray-100 text-gray-900">
-    <header class="bg-primary-dark text-white shadow-lg py-2 relative overflow-hidden">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center z-10 relative">
-            
-            <div class="flex items-end mb-4 md:mb-0">
-            <a href="index.html" class="flex items-end no-underline">
-                <img src="LogoN_transparent.png" alt="Libertasio L logo" class="h-16 w-auto mr-[-10px] z-0 relative">
+<body class="font-sans bg-gray-50 text-gray-900">
 
-                <span class="ml-1 text-[2.6rem] leading-none font-serif tracking-tight font-semibold hover:text-accent-light transition-colors duration-300 mb-[-6px]">
-                ibertasio.com
-                </span>
-            </a>
-            </div>
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-blue-900 text-white text-sm md:text-base p-4 md:p-6 flex flex-col md:flex-row justify-between items-center z-50 shadow-lg">
+    <p class="mb-2 md:mb-0">
+      Wir verwenden Cookies, um Ihr Erlebnis zu verbessern. 
+      <a href="/datenschutz/" class="underline hover:text-blue-300 ml-1">Mehr erfahren</a>
+    </p>
+    <button id="accept-cookies" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition">
+      Akzeptieren
+    </button>
+  </div>
 
-            <nav>
-            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-center pt-[20px]">
-                <li><a href="index.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300 relative group">Home<span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-medium transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
-                <li><a href="news.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300 relative group">News<span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-medium transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
-                <li><a href="about.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300 relative group">About Us<span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-medium transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
-                <li><a href="support.html" class="text-lg font-medium hover:text-accent-light transition-colors duration-300 relative group">Support<span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary-medium transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></a></li>
-            </ul>
-            </nav>
+  <!-- Header -->
+  <header class="bg-blue-700 text-white shadow-lg py-4 relative overflow-hidden">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center relative z-10">
+      <a href="/" class="flex items-end no-underline">
+        <img src="LogoN_transparent.png" alt="Libertasio L logo" class="h-16 w-auto mr-[-10px] z-0 relative">
+        <span class="ml-1 text-[2.6rem] leading-none font-serif tracking-tight font-semibold hover:text-accent-light transition-colors duration-300 mb-[-6px]">
+                ibertasio.ch
+        </span>
+      </a>
+      <nav>
+        <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg font-medium">
+          <li><a href="/" class="hover:text-blue-200 transition">Home</a></li>
+          <li><a href="/datenschutz/" class="hover:text-blue-200 transition">Datenschutz</a></li>
+          <li><a href="/about/" class="hover:text-blue-200 transition">About Us</a></li>
+          <li><a href="/kontakt/" class="hover:text-blue-200 transition">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-20 transform -skew-y-3 scale-110 z-0"></div>
+  </header>
+
+  <!-- Main -->
+  <main class="container mx-auto px-4 py-12">
+
+    <!-- Hero -->
+    <section class="hero bg-white shadow-md rounded-xl p-8 md:p-12 text-center md:text-left grid gap-8 md:grid-cols-2 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">DSGVO-konforme Cookie-Banner für Ihr Unternehmen</h1>
+        <p class="text-lg text-gray-700 mb-6">
+          Viele Webseiten in der Schweiz sind auch für Nutzer in der EU erreichbar. Damit gelten strengere Datenschutzgesetze.  
+          Wir helfen Ihnen, ein rechtssicheres Cookie-Banner zu integrieren – einfach, zuverlässig und professionell.
+        </p>
+        <a href="/about/" class="btn">Kostenlose Beratung</a>
+      </div>
+      <div class="text-8xl text-blue-600 text-center">🛡️</div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="mt-20">
+      <h2 class="text-center text-3xl font-bold mb-10">Warum Unternehmen uns vertrauen</h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="card">
+          <div class="text-4xl mb-4">✅</div>
+          <h3 class="text-xl font-semibold mb-2">Erfahrung</h3>
+          <p>Wir haben zahlreiche Cookie-Banner erfolgreich umgesetzt – DSGVO- und revDSG-konform.</p>
         </div>
-        <div class="absolute inset-0 bg-gradient-to-br from-primary-medium to-blue-600 opacity-20 transform -skew-y-3 scale-110 z-0"></div>
-    </header>
-
-    <main class="container mx-auto px-4 py-8">
-
-        <section class="flex flex-col lg:flex-row gap-8 mb-12">
-            <div id="featured-article-container" class="lg:w-2/3">
-                </div>
-
-            <div class="lg:w-1/3 bg-gray-800 text-white p-6 md:p-8 rounded-xl shadow-lg text-center relative overflow-hidden flex flex-col justify-center">
-                <div class="absolute inset-0 opacity-10 bg-no-repeat bg-center" style="background-image: url('data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M25 0L50 50L25 100L0 50Z\' fill=\'%23a0a0a0\' opacity=\'0.1\'/%3E%3Cpath d=\'M75 0L100 50L75 100L50 50Z\' fill=\'%23a0a0a0\' opacity=\'0.1\'/%3E%3C/svg%3E'); background-size: 80px;"></div>
-                <div class="relative z-10">
-                    <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-primary-medium">The Libertasio Ethos</h2>
-                    <p class="text-base md:text-lg font-light italic mb-6 leading-relaxed">
-                        "In a world of noise, we seek clarity. We believe in the power of unvarnished truth, the beauty of diverse perspectives, and the relentless pursuit of freedom in thought and expression. Libertasio.com is not just news; it's a commitment to informed liberty."
-                    </p>
-                    <a href="about.html" class="btn-primary-inverted inline-block text-base">Discover Our Mission</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <h2 class="text-4xl font-extrabold text-center text-primary-dark mb-10">Curated Perspectives</h2>
-            <div id="editors-picks-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                </div>
-        </section>
-        
-        <section class="mb-12">
-            <h2 class="text-4xl font-extrabold text-center text-primary-dark mb-10">Deep Dive: An Essential Read</h2>
-            <div id="deep-dive-container" class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col lg:flex-row transform hover:shadow-2xl transition-all duration-300 ease-in-out">
-                </div>
-        </section>
-
-        <section class="bg-accent-light text-white p-8 md:p-10 rounded-xl shadow-lg mb-12">
-            <blockquote id="dynamic-quote" class="text-2xl md:text-3xl font-semibold italic text-center leading-relaxed">
-                "The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion."
-            </blockquote>
-            <p id="dynamic-quote-source" class="text-lg text-right mt-4">- Albert Camus</p>
-        </section>
-
-        <section class="mb-12">
-            <h2 class="text-4xl font-extrabold text-center text-primary-dark mb-10">More Insights</h2>
-            <div id="articles-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-        </section>
-
-        <section class="text-center p-6 bg-white rounded-lg shadow-md mb-8">
-            <h3 class="text-3xl font-bold text-primary-dark mb-3">Who We Are</h3>
-            <p class="text-gray-700 text-lg mb-4 max-w-2xl mx-auto">
-                Libertasio.com is dedicated to providing critical, unbiased global news and analysis. We champion informed perspectives and foster a community committed to understanding the complexities of our world.
-            </p>
-            <a href="about.html" class="btn-primary inline-block">Our Story</a>
-        </section>
-
-    </main>
-
-    <footer class="bg-primary-dark text-white py-8 mt-12">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-sm">© 2025 Libertasio.com. All rights reserved. Modern News, Simple Delivery.</p>
+        <div class="card">
+          <div class="text-4xl mb-4">🌍</div>
+          <h3 class="text-xl font-semibold mb-2">International</h3>
+          <p>Wir kennen die Unterschiede zwischen Schweizer und EU-Recht und setzen diese optimal für Sie um.</p>
         </div>
-    </footer>
+        <div class="card">
+          <div class="text-4xl mb-4">🔒</div>
+          <h3 class="text-xl font-semibold mb-2">Sicherheit</h3>
+          <p>Ihr Unternehmen wird rechtlich abgesichert und Ihre Nutzer erhalten volle Transparenz.</p>
+        </div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- Leistungen -->
+    <section class="mt-20">
+      <h2 class="text-center text-3xl font-bold mb-10">Unsere Leistungen</h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-2">Cookie-Banner Entwicklung</h3>
+          <p>Individuell gestaltete Banner, die optisch zu Ihrer Webseite passen und alle rechtlichen Vorgaben erfüllen.</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-2">Datenschutzerklärung</h3>
+          <p>Rechtssichere Texte für Ihre Webseite, abgestimmt auf Ihre eingesetzten Tools und Drittanbieter.</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-2">Compliance-Beratung</h3>
+          <p>Wir prüfen Ihre Webseite auf DSGVO- und revDSG-Konformität und geben konkrete Handlungsempfehlungen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prozess -->
+    <section class="mt-20 bg-gray-100 rounded-xl p-12">
+      <h2 class="text-center text-3xl font-bold mb-10">Wie wir arbeiten</h2>
+      <div class="grid gap-12 md:grid-cols-3 text-center">
+        <div>
+          <div class="text-5xl mb-4">1️⃣</div>
+          <h3 class="text-xl font-semibold mb-2">Analyse</h3>
+          <p>Wir prüfen Ihre Webseite und ermitteln, welche Cookies und Tools datenschutzrelevant sind.</p>
+        </div>
+        <div>
+          <div class="text-5xl mb-4">2️⃣</div>
+          <h3 class="text-xl font-semibold mb-2">Umsetzung</h3>
+          <p>Wir integrieren ein maßgeschneidertes Cookie-Banner und alle notwendigen Einwilligungsmechanismen.</p>
+        </div>
+        <div>
+          <div class="text-5xl mb-4">3️⃣</div>
+          <h3 class="text-xl font-semibold mb-2">Absicherung</h3>
+          <p>Sie erhalten die Sicherheit, dass Ihre Webseite den gesetzlichen Anforderungen entspricht.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta mt-20 bg-blue-600 text-white text-center rounded-xl p-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Lassen Sie uns Ihr Cookie-Banner DSGVO-konform gestalten</h2>
+      <p class="mb-6 text-lg">Kontaktieren Sie uns für eine unverbindliche Beratung und ein faires Angebot.</p>
+      <a href="/about/" class="btn btn-light">Jetzt Kontakt aufnehmen</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 mt-16 pt-12">
+    <div class="container mx-auto px-4 grid gap-12 md:grid-cols-4">
+      <div>
+        <a href="/" class="flex items-center mb-4">
+          <img src="LogoN_transparent.png" alt="Libertasio L logo" class="h-10 w-auto mr-2">
+          <span class="text-xl font-bold text-white">Cookie Compliance</span>
+        </a>
+        <p class="text-gray-400 text-sm">
+          Wir sorgen dafür, dass Ihr Unternehmen im Bereich Cookies & Datenschutz immer auf der sicheren Seite ist.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Links</h4>
+        <ul class="space-y-2">
+          <li><a href="/" class="hover:text-white transition">Home</a></li>
+          <li><a href="/datenschutz/" class="hover:text-white transition">Datenschutz</a></li>
+          <li><a href="/about/" class="hover:text-white transition">About Us</a></li>
+          <li><a href="/kontakt/" class="hover:text-white transition">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Services</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-white transition">Cookie-Banner</a></li>
+          <li><a href="#" class="hover:text-white transition">DSGVO Beratung</a></li>
+          <li><a href="#" class="hover:text-white transition">revDSG Schweiz</a></li>
+          <li><a href="#" class="hover:text-white transition">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Kontakt</h4>
+        <p class="text-sm mb-2">📧 kontakt@cookie-compliance.ch</p>
+        <p class="text-sm mb-2">📞 +41 44 123 45 67</p>
+        <div class="flex space-x-4 mt-4">
+          <a href="#" aria-label="LinkedIn" class="hover:text-white transition">🔗</a>
+          <a href="#" aria-label="Twitter" class="hover:text-white transition">🐦</a>
+          <a href="#" aria-label="Facebook" class="hover:text-white transition">📘</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-12 py-6 text-center text-gray-500 text-sm">
+      © <script>document.write(new Date().getFullYear())</script> Cookie Compliance Service. Alle Rechte vorbehalten.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

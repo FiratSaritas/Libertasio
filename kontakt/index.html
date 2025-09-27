@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt | Cookie Compliance Service</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body class="font-sans bg-gray-50 text-gray-900">
+
+  <!-- Header -->
+  <header class="bg-blue-700 text-white shadow-lg py-4 relative overflow-hidden">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center relative z-10">
+      <a href="/" class="flex items-end no-underline">
+        <img src="LogoN_transparent.png" alt="Libertasio L logo" class="h-16 w-auto mr-[-10px] z-0 relative">
+        <span class="ml-1 text-[2.6rem] leading-none font-serif tracking-tight font-semibold hover:text-accent-light transition-colors duration-300 mb-[-6px]">
+                ibertasio.ch
+        </span>
+      </a>
+      <nav>
+        <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg font-medium">
+          <li><a href="/" class="hover:text-blue-200 transition">Home</a></li>
+          <li><a href="/datenschutz/" class="hover:text-blue-200 transition">Datenschutz</a></li>
+          <li><a href="/about/" class="hover:text-blue-200 transition">About Us</a></li>
+          <li><a href="/kontakt/" class="hover:text-blue-200 transition">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-20 transform -skew-y-3 scale-110 z-0"></div>
+  </header>
+
+  <!-- Main -->
+  <main class="container mx-auto px-4 py-12">
+
+    <!-- Intro -->
+    <section class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4">Kontakt aufnehmen</h1>
+      <p class="text-lg text-gray-700">
+        Haben Sie Fragen zu unseren Cookie-Compliance-Lösungen?  
+        Schreiben Sie uns gerne eine Nachricht oder kontaktieren Sie uns direkt per E-Mail oder Telefon.
+      </p>
+    </section>
+
+    <!-- Kontaktinfos + Formular -->
+    <section class="grid gap-12 md:grid-cols-2">
+
+      <!-- Kontaktdaten -->
+      <div class="bg-white shadow-md rounded-xl p-8">
+        <h2 class="text-2xl font-semibold mb-4">Unsere Kontaktdaten</h2>
+        <p class="mb-2">📍 Musterstrasse 12, 8000 Zürich, Schweiz</p>
+        <p class="mb-2">📧 <a href="mailto:kontakt@cookie-compliance.ch" class="text-blue-600 hover:underline">kontakt@cookie-compliance.ch</a></p>
+        <p class="mb-2">📞 +41 44 123 45 67</p>
+        <p class="mt-6 text-gray-600 text-sm">Wir melden uns in der Regel innerhalb von 24 Stunden zurück.</p>
+      </div>
+
+      <!-- Formular -->
+      <div class="bg-white shadow-md rounded-xl p-8">
+        <h2 class="text-2xl font-semibold mb-6">Kontaktformular</h2>
+        <form action="mailto:kontakt@cookie-compliance.ch" method="POST" enctype="text/plain" class="space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-medium mb-1">Ihr Name</label>
+            <input type="text" id="name" name="name" required
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium mb-1">Ihre E-Mail</label>
+            <input type="email" id="email" name="email" required
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium mb-1">Ihre Nachricht</label>
+            <textarea id="message" name="message" rows="5" required
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+          </div>
+          <button type="submit" class="btn">Nachricht senden</button>
+        </form>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 mt-16 pt-12">
+    <div class="container mx-auto px-4 grid gap-12 md:grid-cols-4">
+      <div>
+        <a href="/" class="flex items-center mb-4">
+          <img src="LogoN_transparent.png" alt="Libertasio L logo" class="h-10 w-auto mr-2">
+          <span class="text-xl font-bold text-white">Cookie Compliance</span>
+        </a>
+        <p class="text-gray-400 text-sm">
+          Wir sorgen dafür, dass Ihr Unternehmen im Bereich Cookies & Datenschutz immer auf der sicheren Seite ist.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Links</h4>
+        <ul class="space-y-2">
+          <li><a href="/" class="hover:text-white transition">Home</a></li>
+          <li><a href="/datenschutz/" class="hover:text-white transition">Datenschutz</a></li>
+          <li><a href="/about/" class="hover:text-white transition">About Us</a></li>
+          <li><a href="/kontakt/" class="hover:text-white transition">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Services</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-white transition">Cookie-Banner</a></li>
+          <li><a href="#" class="hover:text-white transition">DSGVO Beratung</a></li>
+          <li><a href="#" class="hover:text-white transition">revDSG Schweiz</a></li>
+          <li><a href="#" class="hover:text-white transition">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Kontakt</h4>
+        <p class="text-sm mb-2">📧 kontakt@cookie-compliance.ch</p>
+        <p class="text-sm mb-2">📞 +41 44 123 45 67</p>
+        <div class="flex space-x-4 mt-4">
+          <a href="#" aria-label="LinkedIn" class="hover:text-white transition">🔗</a>
+          <a href="#" aria-label="Twitter" class="hover:text-white transition">🐦</a>
+          <a href="#" aria-label="Facebook" class="hover:text-white transition">📘</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-12 py-6 text-center text-gray-500 text-sm">
+      © <script>document.write(new Date().getFullYear())</script> Cookie Compliance Service. Alle Rechte vorbehalten.
+    </div>
+  </footer>
+
+</body>
+</html>
