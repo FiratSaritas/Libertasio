@@ -7,23 +7,49 @@
   <link rel="stylesheet" href="/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/png" href="/favicon.png">
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dropdownToggle = document.querySelector("#dropdownToggle");
+      const dropdownMenu = document.querySelector("#dropdownMenu");
+      // Mobile toggle on click/tap
+      dropdownToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        dropdownMenu.classList.toggle("hidden");
+      });
+      // Close when clicking outside (mobile)
+      document.addEventListener("click", (e) => {
+        if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    });
+  </script>
 </head>
 <body class="font-sans bg-gray-50 text-gray-900">
-
   <!-- Header -->
-  <header class="bg-blue-700 text-white shadow-lg py-4 relative overflow-hidden">
+  <header class="bg-blue-700 text-white shadow-lg py-4 relative">
     <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center relative z-10">
       <a href="/" class="flex items-end no-underline">
         <img src="/LogoN_transparent.png" alt="Libertasio L logo" class="h-16 w-auto mr-[-10px] z-0 relative">
         <span class="ml-1 text-[2.6rem] leading-none font-serif tracking-tight font-semibold hover:text-accent-light transition-colors duration-300 mb-[-6px]">
-                ibertasio.ch
+          ibertasio.ch
         </span>
       </a>
       <nav>
         <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg font-medium">
           <li><a href="/" class="hover:text-blue-200 transition">Home</a></li>
-          <li><a href="/datenschutz/" class="hover:text-blue-200 transition">Datenschutz</a></li>
-          <li><a href="/about/" class="hover:text-blue-200 transition">About Us</a></li>
+          <li class="relative group">
+            <a href="#" id="dropdownToggle" class="hover:text-blue-200 transition block">Datenschutz Wissen</a>
+            <ul id="dropdownMenu" class="absolute left-0 hidden group-hover:block bg-white text-gray-900 shadow-lg rounded-md mt-2 space-y-2 py-2 w-64 z-50 md:group-hover:block">
+              <li><a href="/datenschutz/" class="block px-4 py-2 hover:bg-gray-100">Datenschutz</a></li>
+              <li><a href="/rechtliches/" class="block px-4 py-2 hover:bg-gray-100">Rechtliche Einordnung (CH)</a></li>
+              <li><a href="/google-v2/" class="block px-4 py-2 hover:bg-gray-100">Google V2 Cookie Consent</a></li>
+              <li><a href="/google-v2-schweiz/" class="block px-4 py-2 hover:bg-gray-100">Praxisleitfaden Google Consent Mode V2</a></li>
+              <li><a href="/dsg-checkliste/" class="block px-4 py-2 hover:bg-gray-100">DSG-Checkliste (CH)</a></li>
+              <li><a href="/cookies-gtm/" class="block px-4 py-2 hover:bg-gray-100">Cookies Banner und GTM</a></li>
+            </ul>
+          </li>
+          <li><a href="/about/" class="hover:text-blue-200 transition">Über uns</a></li>
           <li><a href="/kontakt/" class="hover:text-blue-200 transition">Kontakt</a></li>
         </ul>
       </nav>

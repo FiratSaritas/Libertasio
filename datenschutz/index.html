@@ -7,26 +7,53 @@
   <link rel="stylesheet" href="/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/png" href="/favicon.png">
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dropdownToggle = document.querySelector("#dropdownToggle");
+      const dropdownMenu = document.querySelector("#dropdownMenu");
+      // Mobile toggle on click/tap
+      dropdownToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        dropdownMenu.classList.toggle("hidden");
+      });
+      // Close when clicking outside (mobile)
+      document.addEventListener("click", (e) => {
+        if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    });
+  </script>
 </head>
 <body class="font-sans bg-gray-50 text-gray-900">
-
   <!-- Header -->
-  <header class="bg-blue-700 text-white shadow-lg py-4 relative overflow-hidden">
+  <header class="bg-blue-700 text-white shadow-lg py-4 relative">
     <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center relative z-10">
       <a href="/" class="flex items-end no-underline">
         <img src="/LogoN_transparent.png" alt="Libertasio L logo" class="h-16 w-auto mr-[-10px] z-0 relative">
         <span class="ml-1 text-[2.6rem] leading-none font-serif tracking-tight font-semibold hover:text-accent-light transition-colors duration-300 mb-[-6px]">
-                ibertasio.ch
+          ibertasio.ch
         </span>
       </a>
       <nav>
         <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg font-medium">
           <li><a href="/" class="hover:text-blue-200 transition">Home</a></li>
-          <li><a href="/datenschutz/" class="hover:text-blue-200 transition">Datenschutz</a></li>
-          <li><a href="/about/" class="hover:text-blue-200 transition">About Us</a></li>
+          <li class="relative group">
+            <a href="#" id="dropdownToggle" class="hover:text-blue-200 transition block">Datenschutz Wissen</a>
+            <ul id="dropdownMenu" class="absolute left-0 hidden group-hover:block bg-white text-gray-900 shadow-lg rounded-md mt-2 space-y-2 py-2 w-64 z-50 md:group-hover:block">
+              <li><a href="/datenschutz/" class="block px-4 py-2 hover:bg-gray-100">Datenschutz</a></li>
+              <li><a href="/rechtliches/" class="block px-4 py-2 hover:bg-gray-100">Rechtliche Einordnung (CH)</a></li>
+              <li><a href="/google-v2/" class="block px-4 py-2 hover:bg-gray-100">Google V2 Cookie Consent</a></li>
+              <li><a href="/google-v2-schweiz/" class="block px-4 py-2 hover:bg-gray-100">Praxisleitfaden Google Consent Mode V2</a></li>
+              <li><a href="/dsg-checkliste/" class="block px-4 py-2 hover:bg-gray-100">DSG-Checkliste (CH)</a></li>
+              <li><a href="/cookies-gtm/" class="block px-4 py-2 hover:bg-gray-100">Cookies Banner und GTM</a></li>
+            </ul>
+          </li>
+          <li><a href="/about/" class="hover:text-blue-200 transition">Über uns</a></li>
           <li><a href="/kontakt/" class="hover:text-blue-200 transition">Kontakt</a></li>
         </ul>
       </nav>
+
     </div>
     <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-20 transform -skew-y-3 scale-110 z-0"></div>
   </header>
@@ -35,20 +62,19 @@
   <section class="text-center py-16 bg-white shadow-md">
     <h1 class="text-4xl font-bold mb-4">Datenschutz & Cookie-Banner</h1>
     <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-      Datenschutz ist nicht nur eine rechtliche Pflicht, sondern auch ein zentrales Element von Nutzervertrauen.  
+      Datenschutz ist nicht nur eine rechtliche Pflicht, sondern auch ein zentrales Element von Nutzervertrauen.
       Falsch implementierte Cookie-Banner können rechtliche Risiken bergen und zu Abmahnungen führen – insbesondere, wenn Drittanbieter-Dienste eingebunden sind.
     </p>
   </section>
 
   <!-- Content -->
   <main class="container mx-auto px-4 py-16 space-y-16">
-
     <!-- Problematische Banner -->
     <section>
       <h2 class="text-3xl font-bold mb-6">Warum viele Cookie-Banner rechtswidrig sind</h2>
       <p class="mb-4">
-        Auf vielen Webseiten finden sich Cookie-Banner, die lediglich einen Hinweis geben („Durch die Nutzung stimmen Sie zu“) oder nur die Option <em>„Akzeptieren“</em> anbieten.  
-        Solche Banner sind aus datenschutzrechtlicher Sicht problematisch, da sie keine echte Wahl ermöglichen. 
+        Auf vielen Webseiten finden sich Cookie-Banner, die lediglich einen Hinweis geben („Durch die Nutzung stimmen Sie zu“) oder nur die Option <em>„Akzeptieren“</em> anbieten.
+        Solche Banner sind aus datenschutzrechtlicher Sicht problematisch, da sie keine echte Wahl ermöglichen.
       </p>
       <p class="mb-4">
         Gemäß der <strong>DSGVO</strong> (EU) und dem <strong>revidierten Datenschutzgesetz</strong> (<strong>revDSG</strong>, Schweiz) muss eine Einwilligung:
@@ -68,7 +94,7 @@
     <section>
       <h2 class="text-3xl font-bold mb-6">Drittanbieter & Tracking</h2>
       <p class="mb-4">
-        Besonders kritisch ist der Einsatz von Drittanbieter-Diensten wie <strong>Google Analytics, Facebook Pixel, YouTube, Google Fonts oder Social-Media-Plugins</strong>.  
+        Besonders kritisch ist der Einsatz von Drittanbieter-Diensten wie <strong>Google Analytics, Facebook Pixel, YouTube, Google Fonts oder Social-Media-Plugins</strong>.
         Diese Dienste übertragen personenbezogene Daten (z. B. IP-Adressen, Nutzerverhalten) oft in Länder außerhalb der Schweiz und EU.
       </p>
       <p>
@@ -80,7 +106,7 @@
     <section>
       <h2 class="text-3xl font-bold mb-6">Schweiz vs. EU – worauf Sie achten müssen</h2>
       <p class="mb-4">
-        Auch wenn Ihr Unternehmen in der Schweiz ansässig ist, gilt: Sobald Ihre Webseite für Nutzer aus der EU erreichbar ist, greifen die strengeren Regeln der <strong>DSGVO</strong>.  
+        Auch wenn Ihr Unternehmen in der Schweiz ansässig ist, gilt: Sobald Ihre Webseite für Nutzer aus der EU erreichbar ist, greifen die strengeren Regeln der <strong>DSGVO</strong>.
       </p>
       <p>
         Das bedeutet, dass ein <strong>rechtssicheres Cookie-Banner</strong> nicht nur in der Schweiz, sondern auch in allen EU-Mitgliedsstaaten Bestand haben muss.
@@ -91,7 +117,7 @@
     <section class="bg-blue-50 border border-blue-200 rounded-xl p-8">
       <h2 class="text-3xl font-bold mb-6">Unsere Lösung</h2>
       <p class="mb-4">
-        Wir entwickeln Cookie-Banner, die sowohl <strong>DSGVO</strong>- als auch <strong>revDSG</strong>-konform sind.  
+        Wir entwickeln Cookie-Banner, die sowohl <strong>DSGVO</strong>- als auch <strong>revDSG</strong>-konform sind.
         Dabei achten wir auf:
       </p>
       <ul class="list-disc pl-6 text-gray-700 space-y-2">
@@ -105,7 +131,6 @@
       </p>
       <a href="/kontakt/" class="btn mt-6">Jetzt Beratung anfragen</a>
     </section>
-
   </main>
 
   <!-- Footer -->
@@ -142,4 +167,9 @@
         <h4 class="text-white text-lg font-semibold mb-4">Kontakt</h4>
         <p class="text-sm mb-2">📧 kontakt@cookie-compliance.ch</p>
         <p class="text-sm mb-2">📞 +41 44 123 45 67</p>
-        <div class="flex spa
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

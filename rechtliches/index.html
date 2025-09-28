@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutz | Cookie Compliance Service</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="/favicon.png">
+   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dropdownToggle = document.querySelector("#dropdownToggle");
+      const dropdownMenu = document.querySelector("#dropdownMenu");
+      // Mobile toggle on click/tap
+      dropdownToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        dropdownMenu.classList.toggle("hidden");
+      });
+      // Close when clicking outside (mobile)
+      document.addEventListener("click", (e) => {
+        if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900">
+  <!-- Header -->
+  <header class="bg-blue-700 text-white shadow-lg py-4 relative">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center relative z-10">
+      <a href="/" class="flex items-end no-underline">
+        <img src="/LogoN_transparent.png" alt="Libertasio L logo" class="h-16 w-auto mr-[-10px] z-0 relative">
+        <span class="ml-1 text-[2.6rem] leading-none font-serif tracking-tight font-semibold hover:text-accent-light transition-colors duration-300 mb-[-6px]">
+          ibertasio.ch
+        </span>
+      </a>
+      <nav>
+        <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg font-medium">
+          <li><a href="/" class="hover:text-blue-200 transition">Home</a></li>
+          <li class="relative group">
+            <a href="#" id="dropdownToggle" class="hover:text-blue-200 transition block">Datenschutz Wissen</a>
+            <ul id="dropdownMenu" class="absolute left-0 hidden group-hover:block bg-white text-gray-900 shadow-lg rounded-md mt-2 space-y-2 py-2 w-64 z-50 md:group-hover:block">
+              <li><a href="/datenschutz/" class="block px-4 py-2 hover:bg-gray-100">Datenschutz</a></li>
+              <li><a href="/rechtliches/" class="block px-4 py-2 hover:bg-gray-100">Rechtliche Einordnung (CH)</a></li>
+              <li><a href="/google-v2/" class="block px-4 py-2 hover:bg-gray-100">Google V2 Cookie Consent</a></li>
+              <li><a href="/google-v2-schweiz/" class="block px-4 py-2 hover:bg-gray-100">Praxisleitfaden Google Consent Mode V2</a></li>
+              <li><a href="/dsg-checkliste/" class="block px-4 py-2 hover:bg-gray-100">DSG-Checkliste (CH)</a></li>
+              <li><a href="/cookies-gtm/" class="block px-4 py-2 hover:bg-gray-100">Cookies Banner und GTM</a></li>
+            </ul>
+          </li>
+          <li><a href="/about/" class="hover:text-blue-200 transition">Über uns</a></li>
+          <li><a href="/kontakt/" class="hover:text-blue-200 transition">Kontakt</a></li>
+        </ul>
+      </nav>
+
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-20 transform -skew-y-3 scale-110 z-0"></div>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-16 bg-white shadow-md">
+    <h1 class="text-4xl font-bold mb-4">Datenschutz & Cookie-Banner</h1>
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+      Datenschutz ist nicht nur eine rechtliche Pflicht, sondern auch ein zentrales Element von Nutzervertrauen.
+      Falsch implementierte Cookie-Banner können rechtliche Risiken bergen und zu Abmahnungen führen – insbesondere, wenn Drittanbieter-Dienste eingebunden sind.
+    </p>
+  </section>
+
+  <!-- Content -->
+  <main class="container mx-auto px-4 py-16 space-y-16">
+
+    <!-- Rechtliche Einordnung (CH) -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Cookies – eine rechtliche Einordnung in der Schweiz</h2>
+      <p class="mb-4">
+        Cookies erleichtern das Surfen im Netz, speichern persönliche Einstellungen und ermöglichen personalisierte Werbung. Gleichzeitig werfen sie erhebliche datenschutzrechtliche Fragen auf. 
+        Der Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte (EDÖB) hat in einem aktuellen Leitfaden präzisiert, welche Anforderungen Unternehmen und Betreiber von Webseiten beim Einsatz von Cookies in der Schweiz zu beachten haben. 
+        Im Fokus stehen insbesondere die Einwilligungsanforderungen, die Regeln zum Tracking sowie die Bearbeitungsgrundsätze des Datenschutzgesetzes (DSG).
+      </p>
+      <h3 class="text-xl font-semibold mb-2">Was sind Cookies?</h3>
+      <p class="mb-4">
+        Cookies sind kleine Textdateien, die beim Besuch einer Website auf dem Endgerät der Nutzerin oder des Nutzers gespeichert werden. Sie dienen dazu, bestimmte Informationen zu sichern, welche die Benutzerfreundlichkeit verbessern oder zielgerichtete Werbung ermöglichen. 
+      </p>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+        <li><strong>Notwendige Cookies:</strong> Sie sind für den Betrieb einer Website unverzichtbar (z. B. Login-Authentifizierung, Warenkorb-Funktion).</li>
+        <li><strong>Nicht notwendige Cookies:</strong> Dazu gehören Tracking-, Analyse- und Marketing-Cookies, die Daten für kommerzielle Zwecke verarbeiten.</li>
+      </ul>
+      <p class="mb-4">
+        Während notwendige Cookies auch ohne ausdrückliche Einwilligung zulässig sind, gelten für nicht notwendige Cookies strenge Anforderungen – insbesondere bei Profiling und Tracking.
+      </p>
+      <h3 class="text-xl font-semibold mb-2">Rechtliche Grundlagen in der Schweiz</h3>
+      <p class="mb-2"><strong>a) Fernmeldegesetz (FMG, Art. 45c)</strong> Seit 2007 enthält das FMG eine Regelung zur Speicherung von Cookies auf Endgeräten. Sie schützt die Integrität dieser Geräte und verpflichtet Webseitenbetreiber, die Nutzer über den Einsatz von Cookies zu informieren sowie eine Widerspruchsmöglichkeit (Opt-out) anzubieten.</p>
+      <p class="mb-4"><strong>b) Datenschutzgesetz (DSG)</strong> Das revidierte DSG, in Kraft seit dem 1. September 2023, regelt die Bearbeitung von Personendaten unter Einsatz von Cookies und ähnlichen Technologien. Zentrale Prinzipien sind:</p>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+        <li>Transparenz: Webseitenbetreiber müssen klar darlegen, welche Daten zu welchem Zweck gesammelt werden.</li>
+        <li>Verhältnismässigkeit: Personendaten dürfen nur soweit bearbeitet werden, wie es für den vorgesehenen Zweck erforderlich ist. Funktionale Cookies wie Sprachauswahl, Logins oder Warenkörbe gelten in der Regel als verhältnismässig.</li>
+        <li>Rechtfertigungspflichten: Eingriffe in die Persönlichkeit müssen entweder auf einer Einwilligung oder auf überwiegenden Interessen beruhen.</li>
+      </ul>
+      <p class="mb-4">Besonders relevant ist die Abgrenzung zwischen einfachem Profiling (Opt-out möglich) und Profiling mit hohem Risiko (Opt-in erforderlich).</p>
+      <h3 class="text-xl font-semibold mb-2">Zulässigkeit von Cookies</h3>
+      <p class="mb-4">
+        Eine gültige Einwilligung setzt gemäss Art. 6 Abs. 6 DSG voraus, dass die betroffene Person angemessen informiert wird und ihre Zustimmung freiwillig erteilt. Für besonders eingriffsintensive Datenbearbeitungen ist gemäss Art. 6 Abs. 7 DSG ein ausdrückliches Opt-in nötig.
+      </p>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+        <li>Funktionale Cookies können auf Basis eines Opt-out verwendet werden.</li>
+        <li>Für personalisierte Werbung oder komplexes Profiling ist eine ausdrückliche Zustimmung notwendig.</li>
+        <li>Bei nicht notwendigen Cookies kann unter Umständen auch eine Interessenabwägung erfolgen.</li>
+      </ul>
+      <p class="mb-4"><strong>Wichtig:</strong> Das blosse Weitersurfen auf einer Website gilt nicht als gültige Einwilligung. Nutzerinnen und Nutzer müssen aktiv zustimmen – etwa durch das Anklicken einer Schaltfläche.</p>
+      <h3 class="text-xl font-semibold mb-2">Profiling und Tracking – die Grenzen</h3>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+        <li>Normales Profiling: Personalisierung von Inhalten oder Werbung. Hier genügt ein Opt-out.</li>
+        <li>Profiling mit hohem Risiko: Sobald wesentliche Persönlichkeitsaspekte analysiert oder über mehrere Webseiten hinweg Daten verknüpft werden, ist ein Opt-in zwingend.</li>
+      </ul>
+      <p class="mb-4">Beispiele für hohes Risiko: Cross-Site-Tracking, die Bearbeitung sensibler Daten (Gesundheit, Finanzen) oder automatisierte Entscheidungen mit rechtlichen Folgen.</p>
+      <h3 class="text-xl font-semibold mb-2">Drittdienste und gemeinsame Verantwortung</h3>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+        <li>Der Betreiber einer Website bleibt verantwortlich, da er über die Zwecke und Mittel der Datenbearbeitung entscheidet.</li>
+        <li>Drittanbieter sind für ihre eigene Bearbeitung verantwortlich, wenn sie Daten zu eigenen Zwecken einsetzen.</li>
+        <li>Häufig liegt eine gemeinsame Verantwortlichkeit vor, wenn der Webseitenbetreiber durch die Einbindung eines Drittdienstes erst die Datenerhebung ermöglicht.</li>
+      </ul>
+      <h3 class="text-xl font-semibold mb-2">Anforderungen an Cookie-Banner</h3>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+        <li>Klare und verständliche Information über den Zweck der Cookies.</li>
+        <li>Gleichwertige Darstellung von „Alle akzeptieren“ und „Ablehnen“.</li>
+        <li>Möglichkeit, einzelne Kategorien aktiv auszuwählen.</li>
+        <li>Einfacher Widerruf der Einwilligung jederzeit möglich.</li>
+      </ul>
+      <p class="mb-4">Nicht zulässig sind u. a.: voreingestellte Zustimmungen (pre-ticked boxes), irreführende Gestaltung wie überdimensionierte „Akzeptieren“-Buttons oder fehlende Ablehnungsoption.</p>
+      <h3 class="text-xl font-semibold mb-2">Was Unternehmen jetzt tun müssen</h3>
+      <ol class="list-decimal pl-6 text-gray-700 space-y-2 mb-4">
+        <li>Cookie-Inventar erstellen: Welche Cookies sind im Einsatz? Welche sind notwendig?</li>
+        <li>Consent-Banner anpassen: DSG-konforme Gestaltung sicherstellen.</li>
+        <li>Tracking-Technologien überprüfen: Risikoanalysen und ggf. Datenschutz-Folgenabschätzungen durchführen.</li>
+        <li>Datenschutzerklärung aktualisieren: Transparente und verständliche Information für die Nutzer bereitstellen.</li>
+      </ol>
+      <p class="mb-4">Wer die Vorgaben umsetzt, reduziert nicht nur rechtliche Risiken, sondern stärkt auch das Vertrauen der Kundschaft. Datenschutz ist heute kein „Nice-to-have“ mehr, sondern ein zentraler Faktor für die digitale Wettbewerbsfähigkeit.</p>
+    </section>
+
+    <!-- Original Lösung Section remains unchanged -->
+    <section class="bg-blue-50 border border-blue-200 rounded-xl p-8">
+      <h2 class="text-3xl font-bold mb-6">Unsere Lösung</h2>
+      <p class="mb-4">
+        Wir entwickeln Cookie-Banner, die sowohl <strong>DSGVO</strong>- als auch <strong>revDSG</strong>-konform sind.
+        Dabei achten wir auf:
+      </p>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2">
+        <li>klare Opt-in-Mechanismen,</li>
+        <li>transparente Informationen für Nutzer,</li>
+        <li>Integration von Drittanbieter-Diensten nur nach Zustimmung,</li>
+        <li>rechtssichere Dokumentation der Einwilligungen.</li>
+      </ul>
+      <p class="mt-6">
+        So stellen Sie sicher, dass Ihre Webseite rechtlich abgesichert ist und Ihre Nutzer volles Vertrauen haben.
+      </p>
+      <a href="/kontakt/" class="btn mt-6">Jetzt Beratung anfragen</a>
+    </section>
+
+  </main>
+
+  <!-- Footer unchanged -->
+  <footer class="bg-gray-900 text-gray-300 mt-16 pt-12">
+    <div class="container mx-auto px-4 grid gap-12 md:grid-cols-4">
+      <div>
+        <a href="/" class="flex items-center mb-4">
+          <img src="LogoN_transparent.png" alt="Libertasio L logo" class="h-10 w-auto mr-2">
+          <span class="text-xl font-bold text-white">Cookie Compliance</span>
+        </a>
+        <p class="text-gray-400 text-sm">
+          Wir sorgen dafür, dass Ihr Unternehmen im Bereich Cookies & Datenschutz immer auf der sicheren Seite ist.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Links</h4>
+        <ul class="space-y-2">
+          <li><a href="/" class="hover:text-white transition">Home</a></li>
+          <li><a href="/datenschutz/" class="hover:text-white transition">Datenschutz</a></li>
+          <li><a href="/about/" class="hover:text-white transition">About Us</a></li>
+          <li><a href="/kontakt/" class="hover:text-white transition">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Services</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-white transition">Cookie-Banner</a></li>
+          <li><a href="#" class="hover:text-white transition">DSGVO Beratung</a></li>
+          <li><a href="#" class="hover:text-white transition">revDSG Schweiz</a></li>
+          <li><a href="#" class="hover:text-white transition">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Kontakt</h4>
+        <p class="text-sm mb-2">📧 kontakt@cookie-compliance.ch</p>
+        <p class="text-sm mb-2">📞 +41 44 123 45 67</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

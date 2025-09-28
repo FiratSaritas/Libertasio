@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google V2 Cookie Consent Policy – Technische und rechtliche Bedeutung für die Schweiz</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dropdownToggle = document.querySelector("#dropdownToggle");
+      const dropdownMenu = document.querySelector("#dropdownMenu");
+
+      // Mobile toggle on click/tap
+      dropdownToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        dropdownMenu.classList.toggle("hidden");
+      });
+
+      // Close when clicking outside (mobile)
+      document.addEventListener("click", (e) => {
+        if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900">
+
+  <!-- Header -->
+  <header class="bg-blue-700 text-white shadow-lg py-4 relative">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center relative z-10">
+      <a href="/" class="flex items-end no-underline">
+        <img src="/LogoN_transparent.png" alt="Libertasio L logo" class="h-16 w-auto mr-[-10px] z-0 relative">
+        <span class="ml-1 text-[2.6rem] leading-none font-serif tracking-tight font-semibold hover:text-accent-light transition-colors duration-300 mb-[-6px]">
+          ibertasio.ch
+        </span>
+      </a>
+      <nav>
+        <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg font-medium">
+          <li><a href="/" class="hover:text-blue-200 transition">Home</a></li>
+          <li class="relative group">
+            <a href="#" id="dropdownToggle" class="hover:text-blue-200 transition block">Datenschutz Wissen</a>
+            <ul id="dropdownMenu" class="absolute left-0 hidden group-hover:block bg-white text-gray-900 shadow-lg rounded-md mt-2 space-y-2 py-2 w-64 z-50 md:group-hover:block">
+              <li><a href="/datenschutz/" class="block px-4 py-2 hover:bg-gray-100">Datenschutz</a></li>
+              <li><a href="/rechtliches/" class="block px-4 py-2 hover:bg-gray-100">Rechtliche Einordnung (CH)</a></li>
+              <li><a href="/google-v2/" class="block px-4 py-2 hover:bg-gray-100">Google V2 Cookie Consent</a></li>
+              <li><a href="/google-v2-schweiz/" class="block px-4 py-2 hover:bg-gray-100">Google V2 Cookie Consent Policy – Schweiz</a></li>
+              <li><a href="/dsg-checkliste/" class="block px-4 py-2 hover:bg-gray-100">DSG-Checkliste (CH)</a></li>
+              <li><a href="/cookies-gtm/" class="block px-4 py-2 hover:bg-gray-100">Cookies Banner und GTM</a></li>
+            </ul>
+          </li>
+          <li><a href="/about/" class="hover:text-blue-200 transition">Über uns</a></li>
+          <li><a href="/kontakt/" class="hover:text-blue-200 transition">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-20 transform -skew-y-3 scale-110 z-0"></div>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-16 bg-white shadow-md">
+    <h1 class="text-4xl font-bold mb-4">Google V2 Cookie Consent Policy – Technische und rechtliche Bedeutung für die Schweiz</h1>
+  </section>
+
+  <!-- Content -->
+  <main class="container mx-auto px-4 py-16 space-y-16 prose max-w-none">
+    <section>
+      <p>
+        Mit der Einführung der Google V2 Cookie Consent Policy (auch bekannt als Google Consent Mode V2) hat Google Anfang 2024 einen neuen Standard für das Management von Einwilligungen im Online-Marketing etabliert. Diese Policy regelt, wie Webseitenbetreiber den Umgang mit Cookies und Tracking-Technologien gestalten müssen, wenn sie weiterhin Dienste wie Google Ads, Google Analytics oder Floodlight-Tags rechtskonform nutzen wollen.
+      </p>
+      <p>
+        Für die Schweiz, die seit dem 1. September 2023 ein revidiertes Datenschutzgesetz (DSG) kennt, ist diese Entwicklung hochrelevant. Zwar richtet sich Googles Policy primär an die Vorgaben der EU-Datenschutzgrundverordnung (DSGVO) sowie der ePrivacy-Richtlinie, doch durch den engen wirtschaftlichen und digitalen Verflechtungsgrad zwischen der Schweiz und der EU haben auch Schweizer Unternehmen faktisch keine Wahl: Wer Google-Dienste einsetzt oder international agiert, muss die neuen Anforderungen erfüllen.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-4">1. Technische Grundlagen von Consent Mode V2</h2>
+      <p>Google Consent Mode V2 unterscheidet zwei zentrale Signalarten, die über das Consent-Management-Framework (z. B. IAB TCF 2.2 oder proprietäre CMPs) an Google übermittelt werden:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>ad_storage:</strong> Steuert, ob Werbe-Cookies gespeichert und ausgelesen werden dürfen.</li>
+        <li><strong>analytics_storage:</strong> Regelt den Einsatz von Cookies für Analysezwecke (z. B. Google Analytics).</li>
+      </ul>
+      <p>Mit der Version V2 sind zwei zusätzliche Signalparameter hinzugekommen:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>ad_user_data:</strong> Steuerung, ob personenbezogene Daten (z. B. für personalisierte Werbung) an Google übermittelt werden dürfen.</li>
+        <li><strong>ad_personalization:</strong> Entscheidet, ob die erfassten Daten zur Erstellung von personalisierten Profilen oder für Remarketing verwendet werden dürfen.</li>
+      </ul>
+      <p>
+        Diese Signale erlauben eine granulare Steuerung, wie weit Tracking- und Personalisierungsprozesse gehen dürfen. Sie sind damit zentral für die Unterscheidung zwischen funktionalem Tracking (z. B. Reichweitenmessung) und profilbasierter Werbung.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-4">2. Verpflichtung zur Implementierung</h2>
+      <p>
+        Seit März 2024 verlangt Google zwingend die Integration von Consent Mode V2, wenn Webseitenbetreiber in der EU weiterhin personalisierte Anzeigen ausspielen oder Messdaten über Google Analytics 4 (GA4) erheben wollen. Fehlt die Implementierung, können Daten nicht mehr in vollem Umfang verarbeitet werden, was insbesondere das Conversion-Tracking und die Attributionsmodelle beeinträchtigt.
+      </p>
+      <p>Auch wenn die Schweiz formal nicht Teil des EU-Rechtsraums ist, betrifft dies faktisch:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Schweizer Onlineshops, die Kunden in der EU bedienen.</li>
+        <li>Medienhäuser und Publisher, die Google Ads vermarkten.</li>
+        <li>Unternehmen, die Google Analytics oder Google Tag Manager verwenden.</li>
+      </ul>
+      <p>
+        Die Policy entfaltet also einen faktischen extraterritorialen Effekt: Ohne Compliance ist die Nutzung zentraler Google-Dienste eingeschränkt oder gar nicht möglich.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-4">3. Relevanz im Kontext des Schweizer Datenschutzgesetzes (DSG)</h2>
+      <p>Das revidierte DSG enthält ähnliche Grundprinzipien wie die DSGVO:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Transparenz:</strong> Nutzer müssen über Zweck, Art und Empfänger der Datenbearbeitung informiert werden.</li>
+        <li><strong>Verhältnismässigkeit:</strong> Nur so viele Daten wie nötig dürfen bearbeitet werden.</li>
+        <li><strong>Rechtfertigungspflicht:</strong> Eingriffe in die Persönlichkeit erfordern entweder Einwilligung oder überwiegende Interessen.</li>
+      </ul>
+      <p>
+        Besonders heikel ist im Schweizer Recht die Abgrenzung zwischen einfachem Profiling (Opt-out möglich) und Profiling mit hohem Risiko (Opt-in erforderlich). Die zusätzlichen Signale in Consent Mode V2 – insbesondere ad_user_data und ad_personalization – adressieren genau diesen Unterschied. Damit lässt sich technisch nachvollziehbar steuern, ob lediglich aggregierte Reichweitendaten erhoben werden oder ob ein risikobehaftetes Tracking mit individuellen Nutzerprofilen erfolgt.
+      </p>
+      <p>Für Schweizer Unternehmen bedeutet dies:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Wer Consent Mode V2 sauber implementiert, kann rechtliche Risiken minimieren und die Anforderungen von Art. 6 DSG (Einwilligung und Information) erfüllen.</li>
+        <li>Die Implementierung unterstützt die Nachweisbarkeit („Accountability“) gemäss DSG, da die Signale protokolliert und dokumentiert werden können.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-4">4. Technische Implikationen für Schweizer Webseitenbetreiber</h2>
+      <p>Die Umsetzung von Google V2 Consent Mode ist nicht trivial und betrifft mehrere Ebenen der Webarchitektur:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Tag Management:</strong> Anpassung des Google Tag Managers oder anderer Tagging-Systeme.</li>
+        <li><strong>CMP-Integration:</strong> Nur CMPs, die das IAB TCF 2.2 oder vergleichbare Standards unterstützen, können die erforderlichen Signale automatisiert an Google weitergeben.</li>
+        <li><strong>Server-Side Tracking:</strong> Viele Schweizer Unternehmen verlagern Tracking-Mechanismen auf serverseitige Lösungen.</li>
+        <li><strong>Datenminimierung:</strong> Consent Mode V2 erzwingt eine saubere Trennung zwischen anonymisierten Daten und personenbezogenen Profilinformationen.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-4">5. Risiken bei Nicht-Umsetzung</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Funktionale Einschränkungen:</strong> Kein vollständiges Conversion-Tracking mehr, verzerrte Analyseberichte.</li>
+        <li><strong>Rechtsrisiken:</strong> Fehlende Einwilligungen können als Verstoss gegen DSG und DSGVO gewertet werden.</li>
+        <li><strong>Vertrauensverlust:</strong> Transparente Consent-Banner werden zunehmend zum Wettbewerbsvorteil.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-4">6. Warum das auch für die Schweiz wichtig ist</h2>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li><strong>Wirtschaftliche Verflechtung:</strong> Schweizer Unternehmen bedienen einen grossen Teil ihres Marktes in der EU.</li>
+        <li><strong>Rechtliche Harmonisierung:</strong> Das neue DSG ist stark an die DSGVO angelehnt.</li>
+        <li><strong>Vertrauensfaktor:</strong> Schweizer Konsumentinnen und Konsumenten erwarten Transparenz.</li>
+        <li><strong>Zukunftssicherheit:</strong> Consent Mode V2 wird zum globalen Standard im Werbe-Ökosystem.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-4">Fazit</h2>
+      <p>
+        Die Google V2 Cookie Consent Policy ist mehr als nur ein technisches Update – sie markiert einen Paradigmenwechsel im Zusammenspiel von Tracking-Technologien, Werbeökonomie und Datenschutz. Für die Schweiz bedeutet das: Auch wenn die Regelungen formal aus der EU stammen, ist die faktische Wirkung direkt spürbar.
+      </p>
+      <p>
+        Unternehmen, die Google-Dienste einsetzen, müssen Consent Mode V2 zwingend implementieren, um sowohl rechtliche Konformität als auch funktionale Datenqualität sicherzustellen. Damit wird deutlich: Datenschutz ist längst nicht mehr nur eine regulatorische Pflicht, sondern ein integraler Bestandteil einer nachhaltigen digitalen Strategie.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 mt-16 pt-12">
+    <div class="container mx-auto px-4 grid gap-12 md:grid-cols-4">
+      <div>
+        <a href="/" class="flex items-center mb-4">
+          <img src="LogoN_transparent.png" alt="Libertasio L logo" class="h-10 w-auto mr-2">
+          <span class="text-xl font-bold text-white">Cookie Compliance</span>
+        </a>
+        <p class="text-gray-400 text-sm">
+          Wir sorgen dafür, dass Ihr Unternehmen im Bereich Cookies & Datenschutz immer auf der sicheren Seite ist.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Links</h4>
+        <ul class="space-y-2">
+          <li><a href="/" class="hover:text-white transition">Home</a></li>
+          <li><a href="/datenschutz/" class="hover:text-white transition">Datenschutz</a></li>
+          <li><a href="/about/" class="hover:text-white transition">About Us</a></li>
+          <li><a href="/kontakt/" class="hover:text-white transition">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Services</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-white transition">Cookie-Banner</a></li>
+          <li><a href="#" class="hover:text-white transition">DSGVO Beratung</a></li>
+          <li><a href="#" class="hover:text-white transition">revDSG Schweiz</a></li>
+          <li><a href="#" class="hover:text-white transition">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Kontakt</h4>
+        <p class="text-sm mb-2">📧 kontakt@cookie-compliance.ch</p>
+        <p class="text-sm mb-2">📞 +41 44 123 45 67</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

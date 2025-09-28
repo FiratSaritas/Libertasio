@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutz | Cookie Compliance Service</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dropdownToggle = document.querySelector("#dropdownToggle");
+      const dropdownMenu = document.querySelector("#dropdownMenu");
+
+      // Mobile toggle on click/tap
+      dropdownToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        dropdownMenu.classList.toggle("hidden");
+      });
+
+      // Close when clicking outside (mobile)
+      document.addEventListener("click", (e) => {
+        if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900">
+  <!-- Header -->
+  <header class="bg-blue-700 text-white shadow-lg py-4 relative">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center relative z-10">
+      <a href="/" class="flex items-end no-underline">
+        <img src="/LogoN_transparent.png" alt="Libertasio L logo" class="h-16 w-auto mr-[-10px] z-0 relative">
+        <span class="ml-1 text-[2.6rem] leading-none font-serif tracking-tight font-semibold hover:text-accent-light transition-colors duration-300 mb-[-6px]"> ibertasio.ch </span>
+      </a>
+      <nav>
+        <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg font-medium">
+          <li><a href="/" class="hover:text-blue-200 transition">Home</a></li>
+          <li class="relative group">
+            <a href="#" id="dropdownToggle" class="hover:text-blue-200 transition block">Datenschutz Wissen</a>
+            <ul id="dropdownMenu" class="absolute left-0 hidden group-hover:block bg-white text-gray-900 shadow-lg rounded-md mt-2 space-y-2 py-2 w-64 z-50 md:group-hover:block">
+              <li><a href="/datenschutz/" class="block px-4 py-2 hover:bg-gray-100">Datenschutz</a></li>
+              <li><a href="/rechtliches/" class="block px-4 py-2 hover:bg-gray-100">Rechtliche Einordnung (CH)</a></li>
+              <li><a href="/google-v2/" class="block px-4 py-2 hover:bg-gray-100">Google V2 Cookie Consent</a></li>
+              <li><a href="/google-v2-schweiz/" class="block px-4 py-2 hover:bg-gray-100">Praxisleitfaden Google Consent Mode V2</a></li>
+              <li><a href="/dsg-checkliste/" class="block px-4 py-2 hover:bg-gray-100">DSG-Checkliste (CH)</a></li>
+              <li><a href="/cookies-gtm/" class="block px-4 py-2 hover:bg-gray-100">Cookies Banner und GTM</a></li>
+            </ul>
+          </li>
+          <li><a href="/about/" class="hover:text-blue-200 transition">Über uns</a></li>
+          <li><a href="/kontakt/" class="hover:text-blue-200 transition">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-20 transform -skew-y-3 scale-110 z-0"></div>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-16 bg-white shadow-md">
+    <h1 class="text-4xl font-bold mb-4">DSG-Checkliste für Unternehmen in der Schweiz – Ausführliche Version</h1>
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+      Die vorliegende Checkliste dient dazu, Unternehmen in der Schweiz bei der systematischen Umsetzung der datenschutzrechtlichen Anforderungen des Datenschutzgesetzes (DSG, Stand 25. September 2023) zu unterstützen. Sie erhebt keinen Anspruch auf Vollständigkeit und ersetzt nicht die rechtliche Beratung. Alle aufgeführten Punkte sollen Unternehmen als Orientierungshilfe dienen, um die datenschutzrechtlichen Pflichten zu erfassen, zu dokumentieren und umzusetzen.
+    </p>
+  </section>
+
+  <!-- Content -->
+  <main class="container mx-auto px-4 py-16 space-y-16">
+    <section>
+      <h2 class="text-3xl font-bold mb-6">1. Erfassung der Datenbestände und Erstellung eines Verzeichnisses</h2>
+      <p class="mb-4">Nach Art. 12 DSG müssen alle Unternehmen sämtliche Bearbeitungstätigkeiten personenbezogener Daten dokumentieren:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Erhebung: Welche personenbezogenen Daten werden erfasst?</li>
+        <li>Speicherung: In welchen Systemen und Formaten werden die Daten abgelegt?</li>
+        <li>Verarbeitung: Welche internen und externen Stellen greifen auf die Daten zu?</li>
+        <li>Weitergabe: An welche Dritte oder an Drittländer werden die Daten übermittelt?</li>
+      </ul>
+      <p class="mt-4">Erstellung eines Verzeichnisses (Art. 12 DSG) mit Zweck, Kategorien von Daten, betroffenen Personen, Empfängern, Speicherdauer und TOMs.</p>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">2. Prüfung der Rechtfertigungsgrundlagen</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Einwilligung: freiwillig, informiert, nachweisbar (Opt-in)</li>
+        <li>Gesetzliche Grundlage: z. B. Buchhaltungspflichten</li>
+        <li>Überwiegendes privates/öffentliches Interesse</li>
+        <li>Besonders schützenswerte Daten (Art. 8 DSG) nur mit ausdrücklicher Einwilligung</li>
+        <li>Profiling mit erheblichem Risiko nur nach Opt-in</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">3. Transparenz- und Informationspflichten</h2>
+      <p class="mb-4">Unternehmen sind verpflichtet, gemäss Art. 19 DSG transparent zu informieren:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Datenschutzerklärung klar und verständlich</li>
+        <li>Angaben zu Zwecken, Empfängern, Rechten der Betroffenen</li>
+        <li>Mehrsprachigkeit (DE, FR, IT, ggf. EN)</li>
+        <li>Regelmässige Aktualisierung</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">4. Einwilligungsmanagement und Cookie-Banner</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Consent-Management-System mit gleichwertigen Optionen</li>
+        <li>Granulare Auswahlmöglichkeiten</li>
+        <li>Widerruf jederzeit möglich</li>
+        <li>Keine Dark Patterns</li>
+        <li>Protokollierung aller Einwilligungen</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">5. Datensicherheit</h2>
+      <p class="mb-4">Gemäss Art. 8 DSG sind angemessene TOMs Pflicht:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Technisch: Verschlüsselung, Zugriffskontrolle, MFA, Monitoring</li>
+        <li>Organisatorisch: Schulungen, Richtlinien, Sicherheitskonzepte</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">6. Prozesse für Betroffenenrechte</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Anlaufstelle für Datenschutzanfragen</li>
+        <li>Antworten auf Auskunftsersuchen innerhalb von 30 Tagen</li>
+        <li>Berichtigungs- und Löschprozesse</li>
+        <li>Datenportabilität in gängigen Formaten</li>
+        <li>Identitätsprüfung</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">7. Umgang mit Datenschutzverletzungen</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Incident-Response-Plan</li>
+        <li>Meldepflichten an EDÖB und Betroffene bei hohem Risiko</li>
+        <li>Systematische Dokumentation aller Vorfälle</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">8. Verträge mit Auftragsbearbeitern</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Auftragsbearbeitungsverträge mit Zweckbindung und TOMs</li>
+        <li>Datenübermittlung nur bei angemessenem Schutzniveau</li>
+        <li>EU-Standardvertragsklauseln oder Swiss-U.S. Framework</li>
+        <li>Dokumentation der Datenstandorte bei Cloud-Diensten</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">9. Datenschutz-Folgenabschätzung (DSFA)</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Pflicht bei hohem Risiko (Profiling, sensible Daten, neue Technologien)</li>
+        <li>Ablauf: Risikoanalyse → Bewertung → Dokumentation → ggf. EDÖB-Konsultation</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">10. Governance und Verantwortlichkeiten</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Verantwortlicher im Management benennen</li>
+        <li>Optional Datenschutzberater</li>
+        <li>Jährliche Audits</li>
+        <li>Regelmässige Mitarbeiterschulungen</li>
+      </ul>
+    </section>
+
+    <section class="bg-blue-50 border border-blue-200 rounded-xl p-8">
+      <h2 class="text-3xl font-bold mb-6">Fazit</h2>
+      <p class="mb-4">
+        Die Umsetzung des Schweizer DSG ist Pflicht, bietet aber auch Chancen: Vertrauen, Datensicherheit und Wettbewerbsvorteile. Ein strukturiertes Datenschutzmanagement schützt vor Sanktionen (bis 250’000 CHF, Art. 34 DSG) und stärkt die Marktposition.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 mt-16 pt-12">
+    <div class="container mx-auto px-4 grid gap-12 md:grid-cols-4">
+      <div>
+        <a href="/" class="flex items-center mb-4">
+          <img src="LogoN_transparent.png" alt="Libertasio L logo" class="h-10 w-auto mr-2">
+          <span class="text-xl font-bold text-white">Cookie Compliance</span>
+        </a>
+        <p class="text-gray-400 text-sm">Wir sorgen dafür, dass Ihr Unternehmen im Bereich Cookies & Datenschutz immer auf der sicheren Seite ist.</p>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Links</h4>
+        <ul class="space-y-2">
+          <li><a href="/" class="hover:text-white transition">Home</a></li>
+          <li><a href="/datenschutz/" class="hover:text-white transition">Datenschutz</a></li>
+          <li><a href="/about/" class="hover:text-white transition">About Us</a></li>
+          <li><a href="/kontakt/" class="hover:text-white transition">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Services</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-white transition">Cookie-Banner</a></li>
+          <li><a href="#" class="hover:text-white transition">DSGVO Beratung</a></li>
+          <li><a href="#" class="hover:text-white transition">revDSG Schweiz</a></li>
+          <li><a href="#" class="hover:text-white transition">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Kontakt</h4>
+        <p class="text-sm mb-2">📧 kontakt@cookie-compliance.ch</p>
+        <p class="text-sm mb-2">📞 +41 44 123 45 67</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

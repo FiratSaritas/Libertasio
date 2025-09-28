@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consent-Banner, Google V2 Consent Mode und der Einsatz von Google Tag Manager</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dropdownToggle = document.querySelector("#dropdownToggle");
+      const dropdownMenu = document.querySelector("#dropdownMenu");
+      // Mobile toggle on click/tap
+      dropdownToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        dropdownMenu.classList.toggle("hidden");
+      });
+      // Close when clicking outside (mobile)
+      document.addEventListener("click", (e) => {
+        if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900">
+  <!-- Header -->
+  <header class="bg-blue-700 text-white shadow-lg py-4 relative">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center relative z-10">
+      <a href="/" class="flex items-end no-underline">
+        <img src="/LogoN_transparent.png" alt="Libertasio L logo" class="h-16 w-auto mr-[-10px] z-0 relative">
+        <span class="ml-1 text-[2.6rem] leading-none font-serif tracking-tight font-semibold hover:text-accent-light transition-colors duration-300 mb-[-6px]">
+          ibertasio.ch
+        </span>
+      </a>
+      <nav>
+        <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg font-medium">
+          <li><a href="/" class="hover:text-blue-200 transition">Home</a></li>
+          <li class="relative group">
+            <a href="#" id="dropdownToggle" class="hover:text-blue-200 transition block">Datenschutz Wissen</a>
+            <ul id="dropdownMenu" class="absolute left-0 hidden group-hover:block bg-white text-gray-900 shadow-lg rounded-md mt-2 space-y-2 py-2 w-64 z-50 md:group-hover:block">
+              <li><a href="/datenschutz/" class="block px-4 py-2 hover:bg-gray-100">Datenschutz</a></li>
+              <li><a href="/rechtliches/" class="block px-4 py-2 hover:bg-gray-100">Rechtliche Einordnung (CH)</a></li>
+              <li><a href="/google-v2/" class="block px-4 py-2 hover:bg-gray-100">Google V2 Cookie Consent</a></li>
+              <li><a href="/google-v2-schweiz/" class="block px-4 py-2 hover:bg-gray-100">Praxisleitfaden Google Consent Mode V2</a></li>
+              <li><a href="/dsg-checkliste/" class="block px-4 py-2 hover:bg-gray-100">DSG-Checkliste (CH)</a></li>
+              <li><a href="/cookies-gtm/" class="block px-4 py-2 hover:bg-gray-100">Cookies Banner und GTM</a></li>
+            </ul>
+          </li>
+          <li><a href="/about/" class="hover:text-blue-200 transition">Über uns</a></li>
+          <li><a href="/kontakt/" class="hover:text-blue-200 transition">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-20 transform -skew-y-3 scale-110 z-0"></div>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-16 bg-white shadow-md">
+    <h1 class="text-4xl font-bold mb-4">Consent-Banner, Google V2 Consent Mode und der Einsatz von Google Tag Manager</h1>
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+      Im modernen digitalen Ökosystem ist die Erhebung und Verarbeitung von Nutzerdaten ein zentraler Bestandteil von Online-Marketing, Personalisierung und Erfolgsmessung. Gleichzeitig stellen Datenschutzgesetze wie das Schweizer DSG oder die europäische DSGVO klare Anforderungen an Transparenz und Einwilligung. In diesem Spannungsfeld bewegen sich Consent-Banner, Googles neuer Consent Mode V2 sowie technische Plattformen wie der Google Tag Manager (GTM).
+    </p>
+  </section>
+
+  <!-- Content -->
+  <main class="container mx-auto px-4 py-16 space-y-16">
+    <section>
+      <h2 class="text-3xl font-bold mb-6">1. Consent-Banner als Schnittstelle zwischen Nutzer und Tracking-Ökosystem</h2>
+      <p>Ein Consent-Banner (auch Cookie Popup genannt) ist die erste Interaktionsschicht, wenn ein Nutzer eine Website betritt. Es hat die Aufgabe,</p>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2">
+        <li>Informationen über eingesetzte Cookies und Tracking-Technologien bereitzustellen,</li>
+        <li>eine aktive Einwilligung (Opt-in) oder Ablehnung einzuholen,</li>
+        <li>und diese Entscheidung technisch an nachgelagerte Systeme (Tag Manager, Pixel, Ads) weiterzugeben.</li>
+      </ul>
+      <p class="mt-4">Die Einwilligung (oder Ablehnung) ist damit die rechtliche Voraussetzung dafür, ob und wie Tracking-Skripte ausgeführt werden dürfen.</p>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">2. Google Consent Mode V2 – die Brücke zwischen Recht & Technik</h2>
+      <p>Google hat im Januar 2024 den Consent Mode V2 eingeführt, um Webseitenbetreibern eine datenschutzkonforme Schnittstelle zwischen Consent-Bannern und Google-Diensten zu bieten.</p>
+      <p><strong>Kernidee:</strong></p>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2">
+        <li>Der Consent Mode V2 ermöglicht es, Google-Skripten dynamisch mitzuteilen, ob ein Nutzer Tracking erlaubt oder nicht.</li>
+        <li>Er unterscheidet mehrere Consent-Signale (z. B. ad_storage, analytics_storage, ad_user_data, ad_personalization).</li>
+        <li>Diese Signale werden durch das Consent-Banner gesetzt und an den Google Tag Manager übergeben.</li>
+      </ul>
+      <p><strong>Beispiele:</strong></p>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2">
+        <li>Opt-in → Google Ads und Analytics dürfen Cookies setzen, Conversion-Tracking und Remarketing laufen normal.</li>
+        <li>Opt-out → Skripte laufen im eingeschränkten Modus: keine Cookies, aber modellierte Daten (Conversion Modeling, Aggregated Reporting).</li>
+      </ul>
+      <p>Das bedeutet: Auch wenn Nutzer Tracking ablehnen, erhält Google aggregierte, anonymisierte Daten, die im AdTech-Ökosystem weiterverwertet werden können – ein Balanceakt zwischen Datenschutz und Werbewirksamkeit.</p>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">3. Rolle des Google Tag Managers (GTM)</h2>
+      <p>Der Google Tag Manager ist das zentrale Werkzeug, um Consent-Banner mit Tracking-Skripten zu verbinden.</p>
+      <p><strong>Funktionsweise:</strong></p>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2">
+        <li>Im GTM werden Tags (z. B. Google Ads Conversion Tag, Facebook Pixel, LinkedIn Insight Tag) eingerichtet.</li>
+        <li>Jeder Tag wird mit einem Trigger (z. B. Seitenaufruf, Klick auf Button, Formular-Submission) verknüpft.</li>
+        <li>Über Consent-Einstellungen im GTM wird gesteuert, ob ein Tag ausgelöst werden darf – abhängig von den Signalen des Consent-Banners.</li>
+      </ul>
+      <p><strong>Beispiel:</strong></p>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2">
+        <li>Consent Banner → Nutzer lehnt Marketing-Cookies ab</li>
+        <li>GTM → blockiert Trigger für Google Ads Remarketing Tag und Facebook Pixel</li>
+        <li>Nur funktionale oder notwendige Tags (z. B. Fraud Prevention, Session Management) laufen weiter</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">4. Google Ad Tags, Pixels und andere Scripts im Consent-Kontext</h2>
+      <p><strong>Google Ad Tags</strong></p>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2">
+        <li>Dienen zur Messung von Klicks, Conversions und zur Schaltung personalisierter Werbung.</li>
+        <li>Ohne gültiges Consent-Signal dürfen sie keine Cookies setzen → Consent Mode sorgt für „Cookie-less Measurement“.</li>
+      </ul>
+      <p><strong>Facebook Pixel, LinkedIn Insight Tag & Co.</strong></p>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2">
+        <li>Arbeiten ähnlich wie Google Ads Tags, sammeln aber auch Cross-Site-Daten.</li>
+        <li>Besonders sensibel, da sie oft als Drittanbieter-Cookies gelten → in der Schweiz nur mit ausdrücklichem Opt-in zulässig.</li>
+      </ul>
+      <p><strong>Google Analytics (GA4)</strong></p>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2">
+        <li>Über GTM eingebunden, reagiert auf analytics_storage.</li>
+        <li>Bei Opt-out werden Daten nur anonymisiert oder gar nicht verarbeitet.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">5. Technische Integration: Consent Banner ↔ GTM ↔ Google V2</h2>
+      <p>Der technische Ablauf sieht wie folgt aus:</p>
+      <ol class="list-decimal pl-6 text-gray-700 space-y-2">
+        <li>Consent Banner (z. B. OneTrust, Cookiebot oder Custom Lösung) wird geladen.</li>
+        <li>Nutzer wählt „Akzeptieren“ oder „Ablehnen“ (teilweise granular pro Kategorie).</li>
+        <li>Das Banner schreibt die Consent-Signale (ad_storage, analytics_storage, etc.) in die dataLayer des GTM.</li>
+        <li>Der Google Tag Manager liest diese Signale aus.</li>
+        <li>Tags (Ads, Analytics, Pixel) werden nur ausgelöst, wenn die Einwilligung vorliegt.</li>
+        <li>Wenn keine Einwilligung → Google Consent Mode aktiviert den eingeschränkten Betrieb (keine Cookies, nur modellierte Daten).</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">6. Warum das auch in der Schweiz relevant ist</h2>
+      <p>Obwohl das Schweizer Datenschutzgesetz (DSG) weniger strikt als die DSGVO ist, gelten folgende Punkte:</p>
+      <ul class="list-disc pl-6 text-gray-700 space-y-2">
+        <li>Informierte Einwilligung (Art. 6 DSG): Consent-Banner müssen transparent informieren und eine echte Wahl bieten.</li>
+        <li>Profiling mit hohem Risiko (Art. 6 Abs. 7 DSG): Remarketing und Cross-Site-Tracking sind nur mit ausdrücklicher Zustimmung erlaubt.</li>
+        <li>Verantwortlichkeit: Webseitenbetreiber haften für die Einbindung von Drittanbietern wie Google Ads oder Facebook.</li>
+        <li>Extraterritorialität: Viele Schweizer Unternehmen bedienen EU-Nutzer → DSGVO-Standards sind faktisch Pflicht.</li>
+      </ul>
+      <p><strong>Praktische Folge:</strong><br>
+      Ohne korrekt implementierten Consent Mode V2 und ein funktionierendes Consent Management riskieren Schweizer Unternehmen nicht nur Bussen (bis 250’000 CHF), sondern auch den Verlust von Datenbasis für ihr Online-Marketing.</p>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-bold mb-6">7. Best Practices für Schweizer Unternehmen</h2>
+      <ol class="list-decimal pl-6 text-gray-700 space-y-2">
+        <li>Consent-Banner einführen, das Google Consent Mode V2 unterstützt.</li>
+        <li>GTM Consent-Einstellungen aktivieren und für alle Tags Kategorien definieren.</li>
+        <li>Ad- und Analytics-Tags nur feuern, wenn Opt-in vorliegt.</li>
+        <li>Fallback-Strategien einrichten: Modellierte Conversions statt vollständiger Daten.</li>
+        <li>Dokumentation & Protokollierung: Nachweis, wann und wie Einwilligungen erteilt wurden.</li>
+        <li>Regelmässige Audits: Prüfen, ob neue Tags (z. B. durch Marketing-Teams hinzugefügt) DSG-konform laufen.</li>
+      </ol>
+    </section>
+
+    <section class="bg-blue-50 border border-blue-200 rounded-xl p-8">
+      <h2 class="text-3xl font-bold mb-6">✅ Fazit</h2>
+      <p>Der Zusammenhang zwischen Consent-Bannern, Google V2 Consent Mode, Google Tag Manager und Tracking-Skripten ist nicht nur eine technische Schnittstelle, sondern ein rechtlich-technisches Sicherheitsnetz. Wer Consent Mode korrekt integriert, stellt sicher, dass seine Marketing-Messungen weiterlaufen – und gleichzeitig die Anforderungen des DSG sowie der DSGVO eingehalten werden.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 mt-16 pt-12">
+    <div class="container mx-auto px-4 grid gap-12 md:grid-cols-4">
+      <div>
+        <a href="/" class="flex items-center mb-4">
+          <img src="LogoN_transparent.png" alt="Libertasio L logo" class="h-10 w-auto mr-2">
+          <span class="text-xl font-bold text-white">Cookie Compliance</span>
+        </a>
+        <p class="text-gray-400 text-sm">
+          Wir sorgen dafür, dass Ihr Unternehmen im Bereich Cookies & Datenschutz immer auf der sicheren Seite ist.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Links</h4>
+        <ul class="space-y-2">
+          <li><a href="/" class="hover:text-white transition">Home</a></li>
+          <li><a href="/datenschutz/" class="hover:text-white transition">Datenschutz</a></li>
+          <li><a href="/about/" class="hover:text-white transition">About Us</a></li>
+          <li><a href="/kontakt/" class="hover:text-white transition">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Services</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-white transition">Cookie-Banner</a></li>
+          <li><a href="#" class="hover:text-white transition">DSGVO Beratung</a></li>
+          <li><a href="#" class="hover:text-white transition">revDSG Schweiz</a></li>
+          <li><a href="#" class="hover:text-white transition">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white text-lg font-semibold mb-4">Kontakt</h4>
+        <p class="text-sm mb-2">📧 kontakt@cookie-compliance.ch</p>
+        <p class="text-sm mb-2">📞 +41 44 123 45 67</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
