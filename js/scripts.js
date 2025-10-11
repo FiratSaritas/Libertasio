@@ -6,7 +6,7 @@
 
 // ================= Cookie Banner + Consent ===================
 
-// Translations for banner text
+// Translations
 const translations = {
   de: {
     text: "Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren, Funktionen für soziale Medien anzubieten und die Zugriffe auf unsere Website zu analysieren. Informationen zu Ihrer Nutzung unserer Website werden an unsere Partner für soziale Medien, Werbung und Analysen weitergegeben. <a href='/myself2/privacy'>Mehr erfahren</a>.",
@@ -38,37 +38,35 @@ const translations = {
   }
 };
 
-// Google gtag Consent Mode setup
+// Google Consent Mode setup
 window.dataLayer = window.dataLayer || [];
 function gtag(){ dataLayer.push(arguments); }
 
-// Default (before user action) – everything denied
+// Default before consent
 gtag('consent', 'default', {
   'ad_storage': 'denied',
   'analytics_storage': 'denied'
 });
 
-// Handle consent choice
+// Handle user consent
 function handleConsent(status) {
   gtag('consent', 'update', {
     'ad_storage': status,
     'analytics_storage': status
   });
 
-  const banner = document.getElementById('cookie-banner');
-  if (banner) banner.style.display = 'none';
-
   localStorage.setItem('cookie_consent', status);
+  document.getElementById('cookie-banner').style.display = 'none';
+  document.getElementById('cookie-button').style.display = 'block'; // show sticky button
   console.log("✅ Cookie consent set to:", status);
 }
 
-// Open settings panel
+// Open the settings panel
 function openSettings() {
-  const panel = document.getElementById('settings-panel');
-  if (panel) panel.style.display = 'block';
+  document.getElementById('settings-panel').style.display = 'block';
 }
 
-// Switch language dynamically
+// Switch language
 function switchLang(lang) {
   const t = translations[lang];
   if (!t) return;
@@ -79,32 +77,25 @@ function switchLang(lang) {
   document.getElementById('settings-text').innerText = t.settingsText;
 }
 
-// Inject the banner automatically on all pages
-window.addEventListener('DOMContentLoaded', function () {
-  const storedConsent = localStorage.getItem('cookie_consent');
-  if (storedConsent) {
-    console.log("ℹ️ Consent already stored:", storedConsent);
-    return;
-  }
-
-  // Banner HTML
+// Create the consent banner + sticky reopen button
+function injectBanner() {
   const bannerHTML = `
     <div id="cookie-banner" style="
-      display:block;
+      display:none;
       position:fixed;
       bottom:0;
       left:0;
       right:0;
-      background:#f9f9f9;
+      background:#fff;
       color:#333;
-      padding:1rem;
+      padding:1rem 1.5rem;
       z-index:2147483647;
-      border-top:1px solid #ddd;
-      box-shadow:0 -2px 6px rgba(0,0,0,0.15);
+      border-top:1px solid #ccc;
+      box-shadow:0 -2px 10px rgba(0,0,0,0.2);
       font-size:0.9rem;
       line-height:1.4;
     ">
-      <div style="display:flex; justify-content:flex-end; gap:0.3rem; margin-bottom:0.5rem;">
+      <div style="display:flex; justify-content:flex-end; gap:0.4rem; margin-bottom:0.6rem;">
         <button class="btn-lang" onclick="switchLang('de')">DE</button>
         <button class="btn-lang" onclick="switchLang('it')">IT</button>
         <button class="btn-lang" onclick="switchLang('fr')">FR</button>
@@ -113,27 +104,62 @@ window.addEventListener('DOMContentLoaded', function () {
 
       <p id="cookie-text" style="margin-bottom:0.8rem;">
         Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren, Funktionen für soziale Medien anzubieten und die Zugriffe auf unsere Website zu analysieren. 
-        Informationen zu Ihrer Nutzung unserer Website werden an unsere Partner weitergegeben. 
         <a href="/myself2/privacy">Mehr erfahren</a>.
       </p>
 
-      <div class="cookie-buttons" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-        <button class="btn-customize" onclick="openSettings()" id="settings-btn" style="padding:0.4rem 0.8rem; border:1px solid #ccc; background:#fff; border-radius:4px;">Einstellungen</button>
-        <button class="btn btn-accept" onclick="handleConsent('granted')" id="accept-btn" style="background:#007bff; color:#fff; border:none; padding:0.4rem 0.8rem; border-radius:4px;">
+      <div class="cookie-buttons" style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+        <button id="settings-btn" onclick="openSettings()" style="padding:0.4rem 0.8rem; border:1px solid #ccc; background:#f8f8f8; border-radius:4px;">Einstellungen</button>
+        <button id="accept-btn" onclick="handleConsent('granted')" style="background:#007bff; color:#fff; border:none; padding:0.4rem 0.8rem; border-radius:4px;">
           <span id="accept-label">Alle akzeptieren</span>
         </button>
       </div>
 
       <div id="settings-panel" style="display:none; margin-top:0.8rem;">
         <p id="settings-text" style="margin-bottom:0.5rem;">Hier können Sie Ihre Cookie-Einstellungen anpassen:</p>
-        <button class="btn btn-reject" onclick="handleConsent('denied')" id="reject-btn" style="background:#e0e0e0; border:none; padding:0.4rem 0.8rem; border-radius:4px;">Nur notwendige Cookies verwenden</button>
+        <button id="reject-btn" onclick="handleConsent('denied')" style="background:#e0e0e0; border:none; padding:0.4rem 0.8rem; border-radius:4px;">Nur notwendige Cookies verwenden</button>
       </div>
     </div>
+
+    <button id="cookie-button" onclick="reopenConsentBanner()" style="
+      position:fixed;
+      bottom:20px;
+      left:20px;
+      background:#007bff;
+      color:#fff;
+      border:none;
+      border-radius:50%;
+      width:50px;
+      height:50px;
+      z-index:2147483647;
+      box-shadow:0 2px 6px rgba(0,0,0,0.3);
+      cursor:pointer;
+      font-size:20px;
+      display:none;
+    " title="Cookie Einstellungen">
+      🍪
+    </button>
   `;
 
-  // Inject into page
   document.body.insertAdjacentHTML('beforeend', bannerHTML);
-  switchLang('de'); // default language
+}
 
-  console.log("✅ Cookie banner injected and visible.");
+// Reopen the banner manually
+function reopenConsentBanner() {
+  document.getElementById('cookie-banner').style.display = 'block';
+  document.getElementById('settings-panel').style.display = 'none';
+  document.getElementById('cookie-button').style.display = 'none';
+  switchLang(localStorage.getItem('lang') || 'de');
+}
+
+// Initialize
+window.addEventListener('DOMContentLoaded', function () {
+  injectBanner();
+
+  const storedConsent = localStorage.getItem('cookie_consent');
+  if (!storedConsent) {
+    document.getElementById('cookie-banner').style.display = 'block';
+    switchLang('de');
+  } else {
+    document.getElementById('cookie-button').style.display = 'block'; // show sticky reopen button
+  }
 });
