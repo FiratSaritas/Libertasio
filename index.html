@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    /* Ensure dropdown always appears above everything */
+    #dropdownMenu {
+      z-index: 9999 !important;
+    }
+  </style>
 </head>
 <body class="font-sans bg-gray-50 text-gray-900">
   </div>
@@ -17,15 +23,16 @@
       <a href="/" class="flex items-end no-underline">
         <img src="LogoN_transparent.png" alt="Libertasio L logo" class="h-16 w-auto mr-[-10px] z-0 relative">
         <span class="ml-1 text-[2.6rem] leading-none font-serif tracking-tight font-semibold hover:text-accent-light transition-colors duration-300 mb-[-6px]">
-                ibertasio.ch
+          ibertasio.ch
         </span>
       </a>
-     <nav>
+
+      <nav>
         <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg font-medium">
           <li><a href="/" class="hover:text-blue-200 transition">Home</a></li>
           <li class="relative group">
-            <a href="#" id="dropdownToggle" class="hover:text-blue-200 transition block">Datenschutz Wissen</a>
-            <ul id="dropdownMenu" class="absolute left-0 hidden group-hover:block bg-white text-gray-900 shadow-lg rounded-md mt-2 space-y-2 py-2 w-64 z-50 md:group-hover:block">
+            <a href="#" id="dropdownToggle" class="hover:text-blue-200 transition block">Datenschutz Wissen ▾</a>
+            <ul id="dropdownMenu" class="absolute left-0 hidden bg-white text-gray-900 shadow-lg rounded-md mt-2 space-y-2 py-2 w-64">
               <li><a href="/datenschutz/" class="block px-4 py-2 hover:bg-gray-100">Datenschutz</a></li>
               <li><a href="/rechtliches/" class="block px-4 py-2 hover:bg-gray-100">Rechtliche Einordnung (CH)</a></li>
               <li><a href="/google-v2/" class="block px-4 py-2 hover:bg-gray-100">Google V2 Cookie Consent</a></li>
@@ -57,12 +64,8 @@
         <a href="/kontakt/" class="btn">Kostenlose Beratung</a>
       </div>
       <div class="flex justify-center">
-  <img src="images/security.png" alt="Shield Icon" class="w-64 h-64">
-</div>
-
-
-
-
+        <img src="images/security.png" alt="Shield Icon" class="w-64 h-64">
+      </div>
     </section>
 
     <!-- Why Us -->
@@ -71,21 +74,21 @@
       <div class="grid gap-8 md:grid-cols-3">
         <div class="card">
           <div class="flex justify-center">
-            <img src="images/erfahrung.png" alt="Shield Icon" class="w-32 h-32">
+            <img src="images/erfahrung.png" alt="Erfahrung Icon" class="w-32 h-32">
           </div>
           <h3 class="text-xl font-semibold mb-2">Erfahrung</h3>
           <p>Wir haben zahlreiche Cookie-Banner erfolgreich umgesetzt – DSGVO- und revDSG-konform.</p>
         </div>
         <div class="card">
           <div class="flex justify-center">
-            <img src="images/international.png" alt="Shield Icon" class="w-32 h-32">
+            <img src="images/international.png" alt="International Icon" class="w-32 h-32">
           </div>
           <h3 class="text-xl font-semibold mb-2">International</h3>
           <p>Wir kennen die Unterschiede zwischen Schweizer und EU-Recht und setzen diese optimal für Sie um.</p>
         </div>
         <div class="card">
           <div class="flex justify-center">
-            <img src="images/sicherheit.png" alt="Shield Icon" class="w-32 h-32">
+            <img src="images/sicherheit.png" alt="Sicherheit Icon" class="w-32 h-32">
           </div>
           <h3 class="text-xl font-semibold mb-2">Sicherheit</h3>
           <p>Ihr Unternehmen wird rechtlich abgesichert und Ihre Nutzer erhalten volle Transparenz.</p>
@@ -118,21 +121,21 @@
       <div class="grid gap-12 md:grid-cols-3 text-center">
         <div>
           <div class="flex justify-center">
-            <img src="images/1.png" alt="Shield Icon" class="w-32 h-32">
+            <img src="images/1.png" alt="Analyse Icon" class="w-32 h-32">
           </div>
           <h3 class="text-xl font-semibold mb-2">Analyse</h3>
           <p>Wir prüfen Ihre Webseite und ermitteln, welche Cookies und Tools datenschutzrelevant sind.</p>
         </div>
         <div>
           <div class="flex justify-center">
-            <img src="images/2.png" alt="Shield Icon" class="w-32 h-32">
+            <img src="images/2.png" alt="Umsetzung Icon" class="w-32 h-32">
           </div>
           <h3 class="text-xl font-semibold mb-2">Umsetzung</h3>
           <p>Wir integrieren ein maßgeschneidertes Cookie-Banner und alle notwendigen Einwilligungsmechanismen.</p>
         </div>
         <div>
           <div class="flex justify-center">
-            <img src="images/3.png" alt="Shield Icon" class="w-32 h-32">
+            <img src="images/3.png" alt="Absicherung Icon" class="w-32 h-32">
           </div>
           <h3 class="text-xl font-semibold mb-2">Absicherung</h3>
           <p>Sie erhalten die Sicherheit, dass Ihre Webseite den gesetzlichen Anforderungen entspricht.</p>
@@ -194,6 +197,27 @@
     </div>
   </footer>
 
+  <script>
+    // Dropdown fix: toggles on click, stays above all
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdownToggle = document.getElementById('dropdownToggle');
+      const dropdownMenu = document.getElementById('dropdownMenu');
+
+      if (dropdownToggle && dropdownMenu) {
+        dropdownMenu.style.zIndex = '9999';
+        dropdownToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          dropdownMenu.classList.toggle('hidden');
+        });
+        document.addEventListener('click', function(e) {
+          if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.classList.add('hidden');
+          }
+        });
+      }
+    });
+  </script>
   <script src="js/scripts.js"></script>
 </body>
 </html>
+
