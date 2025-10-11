@@ -9,10 +9,6 @@
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body class="font-sans bg-gray-50 text-gray-900">
-
-    <button id="accept-cookies" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition">
-      Akzeptieren
-    </button>
   </div>
 
   <!-- Header -->
@@ -24,14 +20,25 @@
                 ibertasio.ch
         </span>
       </a>
-      <nav>
+     <nav>
         <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg font-medium">
           <li><a href="/" class="hover:text-blue-200 transition">Home</a></li>
-          <li><a href="/datenschutz/" class="hover:text-blue-200 transition">Datenschutz</a></li>
-          <li><a href="/about/" class="hover:text-blue-200 transition">About Us</a></li>
+          <li class="relative group">
+            <a href="#" id="dropdownToggle" class="hover:text-blue-200 transition block">Datenschutz Wissen</a>
+            <ul id="dropdownMenu" class="absolute left-0 hidden group-hover:block bg-white text-gray-900 shadow-lg rounded-md mt-2 space-y-2 py-2 w-64 z-50 md:group-hover:block">
+              <li><a href="/datenschutz/" class="block px-4 py-2 hover:bg-gray-100">Datenschutz</a></li>
+              <li><a href="/rechtliches/" class="block px-4 py-2 hover:bg-gray-100">Rechtliche Einordnung (CH)</a></li>
+              <li><a href="/google-v2/" class="block px-4 py-2 hover:bg-gray-100">Google V2 Cookie Consent</a></li>
+              <li><a href="/google-v2-schweiz/" class="block px-4 py-2 hover:bg-gray-100">Praxisleitfaden Google Consent Mode V2</a></li>
+              <li><a href="/dsg-checkliste/" class="block px-4 py-2 hover:bg-gray-100">DSG-Checkliste (CH)</a></li>
+              <li><a href="/cookies-gtm/" class="block px-4 py-2 hover:bg-gray-100">Cookies Banner und GTM</a></li>
+            </ul>
+          </li>
+          <li><a href="/about/" class="hover:text-blue-200 transition">Über uns</a></li>
           <li><a href="/kontakt/" class="hover:text-blue-200 transition">Kontakt</a></li>
         </ul>
       </nav>
+
     </div>
     <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-20 transform -skew-y-3 scale-110 z-0"></div>
   </header>
