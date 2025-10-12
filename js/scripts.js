@@ -48,6 +48,16 @@ gtag('consent', 'default', {
   'analytics_storage': 'denied'
 });
 
+// ====== LOAD GOOGLE TAG MANAGER ONLY AFTER CONSENT ======
+function loadGTM() {
+  if (window.gtmDidLoad) return; // prevent double load
+  window.gtmDidLoad = true;
+  const gtmScript = document.createElement('script');
+  gtmScript.async = true;
+  gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TZ5G3ZTX';   document.head.appendChild(gtmScript);
+  console.log("✅ GTM loaded after consent");
+}
+
 // Handle user consent
 function handleConsent(status) {
   gtag('consent', 'update', {
@@ -59,6 +69,11 @@ function handleConsent(status) {
   document.getElementById('cookie-banner').style.display = 'none';
   document.getElementById('cookie-button').style.display = 'block'; // show sticky button
   console.log("✅ Cookie consent set to:", status);
+
+  // ✅ Load GTM only when cookies are accepted
+  if (status === 'granted') {
+    loadGTM();
+  }
 }
 
 // Open the settings panel
@@ -161,5 +176,8 @@ window.addEventListener('DOMContentLoaded', function () {
     switchLang('de');
   } else {
     document.getElementById('cookie-button').style.display = 'block'; // show sticky reopen button
+    if (storedConsent === 'granted') {
+      loadGTM(); // ✅ load GTM automatically if previously accepted
+    }
   }
 });
