@@ -62,7 +62,7 @@ function loadGTM() {
   // Initialize GA4 after GTM loads
   gtmScript.onload = function() {
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX'); // <-- replace with your GA4 measurement ID
+    gtag('config', 'G-EYH0GQ6ZCQ'); 
     console.log("✅ GTM and GA4 initialized after consent");
   };
   console.log("✅ GTM loaded after consent");
@@ -191,3 +191,4 @@ window.addEventListener('DOMContentLoaded', function () {
     }
   }
 });
+
