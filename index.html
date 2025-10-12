@@ -7,32 +7,61 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/png" href="favicon.png">
+
   <style>
-    /* Ensure dropdown always appears above everything */
+    /* === GLOBAL Z-INDEX FIX === */
+    header {
+      position: relative;
+      z-index: 1000; /* Header above main */
+      overflow: visible !important;
+    }
     #dropdownMenu {
-      z-index: 9999 !important;
+      position: absolute;
+      z-index: 99999 !important; /* Always top */
+      display: none; /* default hidden; JS / hover will show it */
+    }
+    /* show on hover (desktop) and focus-within for keyboard nav */
+    li.group:hover > #dropdownMenu,
+    li.group:focus-within > #dropdownMenu {
+      display: block !important;
+    }
+    /* For devices that support hover ensure hover works;
+       for touch devices the click JS toggle still works. */
+    @media (hover: hover) {
+      li.group:hover > #dropdownMenu {
+        display: block !important;
+      }
+    }
+    /* Make sure all content stays below dropdown */
+    main, section, .hero, footer, .cta {
+      position: relative;
+      z-index: 1 !important;
+    }
+    .cookie-banner {
+      position: fixed;
+      z-index: 99998 !important;
     }
   </style>
 </head>
+
 <body class="font-sans bg-gray-50 text-gray-900">
-  </div>
 
   <!-- Header -->
-  <header class="bg-blue-700 text-white shadow-lg py-4 relative overflow-hidden">
+  <header class="bg-blue-700 text-white shadow-lg py-4 relative overflow-visible">
     <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center relative z-10">
       <a href="/" class="flex items-end no-underline">
-        <img src="LogoN_transparent.png" alt="Libertasio L logo" class="h-16 w-auto mr-[-10px] z-0 relative">
+        <img src="LogoN_transparent.png" alt="Libertasio L logo" class="h-16 w-auto mr-[-10px] relative z-0">
         <span class="ml-1 text-[2.6rem] leading-none font-serif tracking-tight font-semibold hover:text-accent-light transition-colors duration-300 mb-[-6px]">
           ibertasio.ch
         </span>
       </a>
 
       <nav>
-        <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg font-medium">
+        <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-lg font-medium relative">
           <li><a href="/" class="hover:text-blue-200 transition">Home</a></li>
           <li class="relative group">
             <a href="#" id="dropdownToggle" class="hover:text-blue-200 transition block">Datenschutz Wissen ▾</a>
-            <ul id="dropdownMenu" class="absolute left-0 hidden bg-white text-gray-900 shadow-lg rounded-md mt-2 space-y-2 py-2 w-64">
+            <ul id="dropdownMenu" class="absolute left-0 bg-white text-gray-900 shadow-xl rounded-md mt-2 space-y-2 py-2 w-64 border border-gray-200">
               <li><a href="/datenschutz/" class="block px-4 py-2 hover:bg-gray-100">Datenschutz</a></li>
               <li><a href="/rechtliches/" class="block px-4 py-2 hover:bg-gray-100">Rechtliche Einordnung (CH)</a></li>
               <li><a href="/google-v2/" class="block px-4 py-2 hover:bg-gray-100">Google V2 Cookie Consent</a></li>
@@ -45,16 +74,15 @@
           <li><a href="/kontakt/" class="hover:text-blue-200 transition">Kontakt</a></li>
         </ul>
       </nav>
-
     </div>
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-20 transform -skew-y-3 scale-110 z-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-20 transform -skew-y-3 scale-110 z-0 pointer-events-none"></div>
   </header>
 
   <!-- Main -->
-  <main class="container mx-auto px-4 py-12">
+  <main class="container mx-auto px-4 py-12 relative z-[1]">
 
     <!-- Hero -->
-    <section class="hero bg-white shadow-md rounded-xl p-8 md:p-12 text-center md:text-left grid gap-8 md:grid-cols-2 items-center">
+    <section class="hero bg-white shadow-md rounded-xl p-8 md:p-12 text-center md:text-left grid gap-8 md:grid-cols-2 items-center relative z-[1]">
       <div>
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">DSGVO-konforme Cookie-Banner für Ihr Unternehmen</h1>
         <p class="text-lg text-gray-700 mb-6">
@@ -64,12 +92,12 @@
         <a href="/kontakt/" class="btn">Kostenlose Beratung</a>
       </div>
       <div class="flex justify-center">
-        <img src="images/security.png" alt="Shield Icon" class="w-64 h-64">
+        <img src="images/digital-security-helvetia.png" alt="Shield Icon" class="w-64 h-200">
       </div>
     </section>
 
     <!-- Why Us -->
-    <section class="mt-20">
+    <section class="mt-20 relative z-[1]">
       <h2 class="text-center text-3xl font-bold mb-10">Warum Unternehmen uns vertrauen</h2>
       <div class="grid gap-8 md:grid-cols-3">
         <div class="card">
@@ -97,7 +125,7 @@
     </section>
 
     <!-- Leistungen -->
-    <section class="mt-20">
+    <section class="mt-20 relative z-[1]">
       <h2 class="text-center text-3xl font-bold mb-10">Unsere Leistungen</h2>
       <div class="grid gap-8 md:grid-cols-3">
         <div class="card">
@@ -116,7 +144,7 @@
     </section>
 
     <!-- Prozess -->
-    <section class="mt-20 bg-gray-100 rounded-xl p-12">
+    <section class="mt-20 bg-gray-100 rounded-xl p-12 relative z-[1]">
       <h2 class="text-center text-3xl font-bold mb-10">Wie wir arbeiten</h2>
       <div class="grid gap-12 md:grid-cols-3 text-center">
         <div>
@@ -144,7 +172,7 @@
     </section>
 
     <!-- CTA -->
-    <section class="cta mt-20 bg-blue-600 text-white text-center rounded-xl p-12">
+    <section class="cta mt-20 bg-blue-600 text-white text-center rounded-xl p-12 relative z-[1]">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Lassen Sie uns Ihr Cookie-Banner DSGVO-konform gestalten</h2>
       <p class="mb-6 text-lg">Kontaktieren Sie uns für eine unverbindliche Beratung und ein faires Angebot.</p>
       <a href="/kontakt/" class="btn btn-light">Jetzt Kontakt aufnehmen</a>
@@ -152,7 +180,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-300 mt-16 pt-12">
+  <footer class="bg-gray-900 text-gray-300 mt-16 pt-12 relative z-[1]">
     <div class="container mx-auto px-4 grid gap-12 md:grid-cols-4">
       <div>
         <a href="/" class="flex items-center mb-4">
@@ -197,27 +225,35 @@
     </div>
   </footer>
 
+  <!-- JS -->
   <script>
-    // Dropdown fix: toggles on click, stays above all
+    // Dropdown toggle fix with top z-index and hover support
     document.addEventListener('DOMContentLoaded', function() {
       const dropdownToggle = document.getElementById('dropdownToggle');
       const dropdownMenu = document.getElementById('dropdownMenu');
-
       if (dropdownToggle && dropdownMenu) {
-        dropdownMenu.style.zIndex = '9999';
+        dropdownMenu.style.zIndex = '99999';
+        // Click toggles (mobile / accessibility)
         dropdownToggle.addEventListener('click', function(e) {
           e.preventDefault();
           dropdownMenu.classList.toggle('hidden');
         });
+        // Close when clicking outside
         document.addEventListener('click', function(e) {
           if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
             dropdownMenu.classList.add('hidden');
           }
         });
+        // Close when a link inside is clicked (mobile UX)
+        dropdownMenu.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            dropdownMenu.classList.add('hidden');
+          });
+        });
       }
     });
   </script>
+
   <script src="js/scripts.js"></script>
 </body>
 </html>
-
