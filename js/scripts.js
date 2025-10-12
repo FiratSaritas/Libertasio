@@ -52,9 +52,19 @@ gtag('consent', 'default', {
 function loadGTM() {
   if (window.gtmDidLoad) return; // prevent double load
   window.gtmDidLoad = true;
+  
+  // Create GTM script
   const gtmScript = document.createElement('script');
   gtmScript.async = true;
-  gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TZ5G3ZTX';   document.head.appendChild(gtmScript);
+  gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TZ5G3ZTX';
+  document.head.appendChild(gtmScript);
+
+  // Initialize GA4 after GTM loads
+  gtmScript.onload = function() {
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX'); // <-- replace with your GA4 measurement ID
+    console.log("✅ GTM and GA4 initialized after consent");
+  };
   console.log("✅ GTM loaded after consent");
 }
 
